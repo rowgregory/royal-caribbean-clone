@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "select-location": {
+      "selectYourLocation": "SELECIONE SUA LOCALIZAÇÃO",
+      "americas": "AMÉRICAS"
+    }
+  },
+  "hero": {
+    "largeTextLine1": "ATÉ $650 DE DESCONTO",
+    "smallTextLine1": "30% DE DESCONTO EM TODOS OS CRUZEIROS",
+    "smallTextLine2": "CRIANÇAS NAVEGAM GRÁTIS",
+    "saleEndsIn": "PROMOÇÃO TERMINA EM",
+    "bookNow": "RESERVE AGORA"
+  }
+}

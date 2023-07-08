@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "select-location": {
+      "selectYourLocation": "SELECT YOUR LOCATION",
+      "americas": "AMERICAS"
+    }
+  },
+  "hero": {
+    "largeTextLine1": "UP TO $650 OFF",
+    "smallTextLine1": "30% OFF ALL CRUISES",
+    "smallTextLine2": "KIDS SAIL FREE",
+    "saleEndsIn": "SALE ENDS IN",
+    "bookNow": "BOOK NOW"
+  }
+}

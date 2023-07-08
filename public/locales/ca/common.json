@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "select-location": {
+      "selectYourLocation": "SÉLECTIONNEZ VOTRE EMPLACEMENT",
+      "americas": "AMÉRIQUES"
+    }
+  },
+  "hero": {
+    "largeTextLine1": "JUSQU'À 650 $ DE RABAIS",
+    "smallTextLine1": "30% DE RABAIS SUR TOUS LES CROISIÈRES",
+    "smallTextLine2": "LES ENFANTS NAVIGUENT GRATUITEMENT",
+    "saleEndsIn": "FIN DE LA VENTE DANS",
+    "bookNow": "RÉSERVER MAINTENANT"
+  }
+}

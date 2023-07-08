@@ -1,0 +1,8 @@
+{
+  "resources": {
+    "select-location": {
+      "selectYourLocation": "SÉLECTIONNEZ VOTRE EMPLACEMENT",
+      "americas": "Amériques"
+    }
+  }
+}
