@@ -11,9 +11,8 @@ datasource db {
 }
 
 model User {
-  id               Int      @id @default(autoincrement())
-  firstName        String
-  lastName         String
+  id               String   @id @default(cuid())
+  name             String
   dob              DateTime @map("dob")
   country          String
   email            String
@@ -22,4 +21,83 @@ model User {
   securityAnswer   String
   isEmailMarketing Boolean
   tos              Boolean
+
+  accounts Account[]
+  sessions Session[]
+  cruises  Cruise[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Guests {
+  id       String @id @default(cuid())
+  adults   Int
+  children Int
+  cruise   Cruise @relation(fields: [cruiseId], references: [id])
+  cruiseId String @unique
+}
+
+model Room {
+  id          String @id @default(cuid())
+  type        String
+  price       Int
+  description String
+  image       String
+  cruise      Cruise @relation(fields: [cruiseId], references: [id])
+  cruiseId    String @unique
+}
+
+model Cruise {
+  id                     String   @id @default(cuid())
+  userId                 String
+  packageTitle           String
+  departurePort          String
+  departureDate          String
+  arrivalDate            String
+  countriesVisiting      String[]
+  price                  Int
+  subtotal               Int
+  taxes                  Int
+  totalPrice             Int
+  roomType               String
+  room                   Room?
+  roomAmount             Int
+  guests                 Guests?
+  handicapAccessibleRoom Boolean
+  roomPreference         Int
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

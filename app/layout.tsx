@@ -1,10 +1,8 @@
-import { I18nextProvider } from 'react-i18next';
 import { LanguageProvider } from './context/LanguageProvider';
 import './globals.css';
-import { Inter } from 'next/font/google';
 import TranslationProvider from './components/TranslationProvider';
-
-const inter = Inter({ subsets: ['latin'] });
+import SessionProvider from './components/SessionProvider';
+import { CruiseProvider } from './context/cruiseContext';
 
 export const metadata = {
   title: 'Royal Caribbean',
@@ -18,10 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <TranslationProvider>
-          <LanguageProvider>{children}</LanguageProvider>
-        </TranslationProvider>
+      <body>
+        <SessionProvider>
+          <CruiseProvider>
+            <TranslationProvider>
+              <LanguageProvider>{children}</LanguageProvider>
+            </TranslationProvider>
+          </CruiseProvider>
+        </SessionProvider>
       </body>
     </html>
   );

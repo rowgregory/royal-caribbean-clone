@@ -30,7 +30,7 @@ const GetRoyalDeals = () => {
 
   return (
     <div className='max-w-[1920px] px-[190px] relative w-full mx-auto my-20'>
-      <h1 className='flex justify-center font-kapra-condensed text-5xl text-[#15264c] tracking-[1px]'>
+      <h1 className='max-w-[680px] w-full flex justify-center font-kapra-condensed text-5xl text-[#15264c] tracking-[1px]'>
         GET ROYAL DEALS, SIGN UP TODAY
       </h1>
       <Formik
