@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import React from 'react';
-import GameChanger1 from '../../assets/home/game_changer_1.jpeg';
-import GameChanger2 from '../../assets/home/game_changer_2.jpeg';
+import Image from 'next/image';
 
 const VideoSection = () => {
   return (
@@ -21,9 +19,13 @@ const VideoSection = () => {
           <div className='relative w-screen max-w-[760px] h-screen max-h-[430px] rounded-md overflow-hidden'>
             <div className='absolute inset-0'>
               <Image
-                src={GameChanger1}
+                src="/game_changer_1.jpeg"
                 alt='Game Changer 1'
                 className='w-full h-full object-cover'
+                width="0"
+                height="0"
+                sizes="100vw"
+                priority={true}
               />
             </div>
             <div className='absolute left-0 right-0 p-4 h-full flex items-center flex-col justify-center'>
@@ -41,9 +43,13 @@ const VideoSection = () => {
           <div className='relative md:w-[760px] h-auto max-h-[430px] rounded-md overflow-hidden'>
             <div className='absolute inset-0'>
               <Image
-                src={GameChanger2}
+                src="/game_changer_2.jpeg"
                 alt='Game Changer 1'
                 className='w-full h-full object-cover'
+                width="0"
+                height="0"
+                sizes="100vw"
+                priority={true}
               />
             </div>
             <div className='absolute left-0 right-0 p-4 h-full flex items-center flex-col justify-center'>

@@ -1,0 +1,48 @@
+-- CreateTable
+CREATE TABLE "Cruise" (
+    "id" TEXT NOT NULL,
+    "agreeToTicketContractAndHealthAcknowledgement" BOOLEAN NOT NULL,
+    "amountOfNights" INTEGER NOT NULL,
+    "arrivalDate" TEXT NOT NULL,
+    "cardCVV" INTEGER NOT NULL,
+    "cardExpMonth" TEXT NOT NULL,
+    "cardExpYear" TEXT NOT NULL,
+    "cardNumber" INTEGER NOT NULL,
+    "countriesVisitring" TEXT[],
+    "dateId" TEXT NOT NULL,
+    "departDate" TEXT NOT NULL,
+    "diningTime" TEXT NOT NULL,
+    "direction" TEXT NOT NULL,
+    "directionCities" TEXT NOT NULL,
+    "firstName" TEXT NOT NULL,
+    "guestForms" JSONB[],
+    "guests" JSONB NOT NULL,
+    "handicapAccessibleRoom" BOOLEAN NOT NULL,
+    "lastName" TEXT NOT NULL,
+    "originalRoomPrice" INTEGER NOT NULL,
+    "packageTitle" TEXT NOT NULL,
+    "paymentAmountToday" INTEGER NOT NULL,
+    "paymentChoice" TEXT NOT NULL,
+    "pickYourRoomPrice" INTEGER NOT NULL,
+    "roomAmount" INTEGER NOT NULL,
+    "roomPreferenceType" TEXT NOT NULL,
+    "roomPrice" INTEGER NOT NULL,
+    "roomType" TEXT NOT NULL,
+    "sailDate" TEXT NOT NULL,
+    "shipDeck" INTEGER NOT NULL,
+    "shipName" TEXT NOT NULL,
+    "shipRoomNumber" INTEGER NOT NULL,
+    "shipSection" TEXT NOT NULL,
+    "subtotal" INTEGER NOT NULL,
+    "summaryExtras" INTEGER NOT NULL,
+    "taxes" INTEGER NOT NULL,
+    "tipTipHooray" INTEGER NOT NULL,
+    "total" INTEGER NOT NULL,
+    "userId" TEXT NOT NULL,
+    "vacationProtection" INTEGER NOT NULL,
+
+    CONSTRAINT "Cruise_pkey" PRIMARY KEY ("id")
+);
+
+-- AddForeignKey
+ALTER TABLE "Cruise" ADD CONSTRAINT "Cruise_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;

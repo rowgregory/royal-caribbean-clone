@@ -1,0 +1,38 @@
+[
+  {
+    "image": "/basic_home_card_1.jpeg",
+    "text1": "PERFECT DAY AT COCOCAY",
+    "text2": "WEEKEND GETAWAYS",
+    "text3": "STARTING FROM",
+    "text4": "$252",
+    "text5": "BOOK NOW",
+    "linkKey": ""
+  },
+  {
+    "image": "/basic_home_card_2.jpeg",
+    "text1": "7 NIGHT",
+    "text2": "CARIBBEAN CRUISES",
+    "text3": "STARTING FROM",
+    "text4": "$436",
+    "text5": "BOOK NOW",
+    "linkKey": ""
+  },
+  {
+    "image": "/basic_home_card_3.jpeg",
+    "text1": "2023-2024",
+    "text2": "EUROPE CRUISES",
+    "text3": "STARTING FROM",
+    "text4": "233",
+    "text5": "BOOK NOW",
+    "linkKey": ""
+  },
+  {
+    "image": "/basic_home_card_4.jpeg",
+    "text1": "2023-2024",
+    "text2": "ALASKA CRUISES",
+    "text3": "STARTING FROM",
+    "text4": "349",
+    "text5": "BOOK NOW",
+    "linkKey": ""
+  }
+]

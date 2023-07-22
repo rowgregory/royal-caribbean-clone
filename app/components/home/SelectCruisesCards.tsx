@@ -1,15 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
-import SelectCard1 from '../../assets/home/select_cruise_card_1.jpeg';
-import SelectCard2 from '../../assets/home/select_cruise_card_2.jpeg';
-import SelectCard3 from '../../assets/home/select_cruise_card_3.jpeg';
-import SelectCard4 from '../../assets/home/select_cruise_card_4.jpeg';
 import { FaMapPin, FaShip } from 'react-icons/fa';
 
 const selectCruisesData = [
   {
-    image: SelectCard1,
+    image: "/select_cruise_card_1.jpeg",
     text1: '3 Night Bahamas & Perfect Day',
     text2: 'Starting from*',
     text3: '$252/person',
@@ -18,7 +14,7 @@ const selectCruisesData = [
     text6: 'View 29 dates',
   },
   {
-    image: SelectCard2,
+    image: "/select_cruise_card_2.jpeg",
     text1: '3 Night Bahamas & Perfect Day Cruise',
     text2: 'Starting from*',
     text3: '$263/person',
@@ -27,7 +23,7 @@ const selectCruisesData = [
     text6: 'View 12 dates',
   },
   {
-    image: SelectCard3,
+    image: "/select_cruise_card_3.jpeg",
     text1: '4 Night Eastern Caribbean Cruise',
     text2: 'Starting from*',
     text3: '$242/person',
@@ -36,7 +32,7 @@ const selectCruisesData = [
     text6: 'View 18 dates',
   },
   {
-    image: SelectCard4,
+    image: "/select_cruise_card_4.jpeg",
     text1: '3 Night Perfect Day Getaway Cruise',
     text2: 'Starting from*',
     text3: '$271/person',
@@ -67,7 +63,11 @@ const SelectCruisesCards = () => {
               <Image
                 src={cruise.image}
                 alt='Card Image'
-                className='rounded-tl rounded-tr'
+                className='rounded-tl rounded-tr w-full h-auto'
+                width="0"
+                height="0"
+                sizes="100vw"
+                priority={true}
               />
             </div>
             <div className='card-content p-4 flex flex-col justify-between'>

@@ -5,7 +5,6 @@ import days from '@/app/utils/days';
 import months from '@/app/utils/months';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Image from 'next/image';
-import LogoSm from '../../assets/logo-white.png';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -36,7 +35,7 @@ const CreateAccountPage = () => {
     const response = await registerUser(values);
     console.log('ACCOUNT CREATED: ', response);
 
-    if (response) push('/account/signin');
+    if (response) push('/signin');
   };
 
   const validateForm = (values: any) => {
@@ -101,9 +100,13 @@ const CreateAccountPage = () => {
     <div className='flex items-center justify-center min-h-screen bg-[#0073bb]'>
       <div className='w-full px-6 py-8 max-w-[680px]'>
         <Image
-          src={LogoSm}
+          src="/logo-white.png"
           alt='Royal Caribbean'
           className=' mb-7 w-2/12 mx-auto'
+          width="0"
+          height="0"
+          sizes="100vw"
+          priority={true}
         />
         <h2 className='text-4xl font-semibold text-center text-white mb-6'>
           Let&apos;s get started
@@ -330,7 +333,7 @@ const CreateAccountPage = () => {
               >
                 Done
               </button>
-              <Link className='text-white' href='/account/signin'>
+              <Link className='text-white' href='/signin'>
                 Sign in
               </Link>
             </div>

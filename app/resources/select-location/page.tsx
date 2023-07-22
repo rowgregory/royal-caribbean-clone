@@ -2,10 +2,6 @@
 
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import US from '../../assets/flags/us.jpeg';
-import Argentina from '../../assets/flags/argentina.png';
-import Brazil from '../../assets/flags/brazil.png';
-import Canada from '../../assets/flags/canada.png';
 import Image from 'next/image';
 import i18n from '@/i18next';
 import { LanguageContext } from '@/app/context/LanguageProvider';
@@ -13,25 +9,25 @@ import { useRouter } from 'next/navigation';
 
 const countryData = [
   {
-    flag: US,
+    flag: "/us.jpeg",
     lng: 'en',
     textKey: 'United States',
     number: '866-562-7625',
   },
   {
-    flag: Argentina,
+    flag: "/argentina.png",
     lng: 'ar',
     textKey: 'Argentina',
     number: '1-305-341-0204',
   },
   {
-    flag: Brazil,
+    flag: "/brazil.png",
     lng: 'br',
     textKey: 'Brazil',
     number: '11 4760-9311',
   },
   {
-    flag: Canada,
+    flag: "/canada.png",
     lng: 'ca',
     textKey: 'Canada',
     number: '866-562-7625',
@@ -67,9 +63,11 @@ const SelectLocationPage = () => {
             >
               <Image
                 src={country.flag}
-                style={{ width: '30px', height: '20px' }}
-                className='mr-3'
+                className='mr-3 w-full h-auto'
                 alt={`${i}`}
+                width="0"
+                height="0"
+                sizes="100vw"
               />
               <div className='text-[#2e3b5d] font-[300] font-[16px]'>
                 {country.textKey}

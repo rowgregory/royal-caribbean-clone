@@ -1,31 +1,43 @@
 'use client';
 
+import createCruise from '@/app/actions/createCruise';
 import { useCruiseContext } from '@/app/context/cruiseContext';
 import months from '@/app/utils/months';
-import { Form, Formik, Field } from 'formik';
-import Link from 'next/link';
+import useBookingStep from '@/app/utils/useBookingStep';
+import validatePaymentPage from '@/app/utils/validPaymentPage';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
+import { useRouter } from 'next/navigation';
 
 const PaymentPage = () => {
-  const { cruise, payCruise } = useCruiseContext() as any;
+  const { push } = useRouter()
+  const { cruise } = useCruiseContext() as any;
+  const { tipTipHooray, vacationProtection, total, ...rest } = cruise || {};
 
-  const totalPrice = (
-    (cruise?.pickYourRoomPrice *
-      (cruise?.guests?.adults + cruise?.guests?.children)) + cruise?.summaryExtras + cruise?.taxes
-  ).toFixed(2);
+  useBookingStep(4, rest);
 
-  const handleSubmit = (values: any) => {
-    payCruise({
+  const handleSubmit = async (values: any) => {
+    const paymentAmountToday =
+      values.paymentChoice === 'minimumAmount' ? 200 : cruise?.total;
+
+    const payload = {
       ...cruise,
       ...values,
-      paymentAmount:
-        values.paymentChoice === 'minimumAmount' ? 200 : Number(totalPrice),
-    });
+      cardNumber: values.cardNumber.toString(),
+      paymentAmountToday,
+    };
+
+    const response = await createCruise(payload);
+
+    if(response) {
+      push('/complete')
+    }
   };
 
   const years = [] as any;
   for (let year = 2023; year <= 2043; year++) {
     years.push(year.toString());
   }
+
   return (
     <>
       <div className="mx-16 pt-5 mb-10 pb-20">
@@ -43,10 +55,10 @@ const PaymentPage = () => {
             cardCVV: '',
             agreeToTicketContractAndHealthAcknowledgement: false,
           }}
-          validate={() => {}}
+          validate={validatePaymentPage}
           onSubmit={handleSubmit}
         >
-          {({ values }) => (
+          {({ values, isValid, touched }) => (
             <Form>
               <div className="relative bg-white shadow-lg overflow-hidden p-8 mb-10">
                 <div className="flex flex-col">
@@ -75,7 +87,7 @@ const PaymentPage = () => {
                     <div className="text-blue-950">Pay the total balance</div>
                     <div className="flex items-center">
                       <label className="mr-3 text-blue-950 text-lg font-semibold">
-                        ${totalPrice} USD
+                        ${cruise?.total} USD
                       </label>
                       <Field
                         type="radio"
@@ -113,6 +125,11 @@ const PaymentPage = () => {
                         className="mt-1 w-full pl-0 px-3 py-2 border border-gray-300 border-1.5 rounded-sm bg-transparent focus:outline-none placeholder-gray-400 pl-5 py-3 font-light text-sm"
                         placeholder="Enter your first name"
                       />
+                      <ErrorMessage
+                        name="firstName"
+                        component="div"
+                        className="text-red-500 text-sm mt-1"
+                      />
                     </div>
                     <div className="flex flex-col w-1/3">
                       <label
@@ -127,6 +144,11 @@ const PaymentPage = () => {
                         name="lastName"
                         className="mt-1 w-full pl-0 px-3 py-2 border border-gray-300 border-1.5 rounded-sm bg-transparent focus:outline-none placeholder-gray-400 pl-5 py-3 font-light text-sm"
                         placeholder="Enter your last name"
+                      />
+                      <ErrorMessage
+                        name="lastName"
+                        component="div"
+                        className="text-red-500 text-sm mt-1"
                       />
                     </div>
                   </div>
@@ -144,6 +166,11 @@ const PaymentPage = () => {
                         name="cardNumber"
                         className="mt-1 w-full pl-0 px-3 py-2 border border-gray-300 border-1.5 rounded-sm bg-transparent focus:outline-none placeholder-gray-400 pl-5 py-3 font-light text-sm"
                         placeholder="**** **** **** ****"
+                      />
+                      <ErrorMessage
+                        name="cardNumber"
+                        component="div"
+                        className="text-red-500 text-sm mt-1"
                       />
                     </div>
                     <div className="flex flex-col w-1/3">
@@ -165,6 +192,11 @@ const PaymentPage = () => {
                               </option>
                             ))}
                           </Field>
+                          <ErrorMessage
+                            name="cardExpMonth"
+                            component="div"
+                            className="text-red-500 text-sm mt-1"
+                          />
                         </div>
                         <div className="w-1/2">
                           <Field
@@ -180,6 +212,11 @@ const PaymentPage = () => {
                               </option>
                             ))}
                           </Field>
+                          <ErrorMessage
+                            name="cardExpYear"
+                            component="div"
+                            className="text-red-500 text-sm mt-1"
+                          />
                         </div>
                       </div>
                     </div>
@@ -196,6 +233,11 @@ const PaymentPage = () => {
                         name="cardCVV"
                         className="mt-1 w-full pl-0 px-3 py-2 border border-gray-300 border-1.5 rounded-sm bg-transparent focus:outline-none placeholder-gray-400 pl-5 py-3 font-light text-sm"
                         placeholder="CVV"
+                      />
+                      <ErrorMessage
+                        name="cardCVV"
+                        component="div"
+                        className="text-red-500 text-sm mt-1"
                       />
                     </div>
                   </div>
@@ -216,6 +258,11 @@ const PaymentPage = () => {
                     Agree to the Cruise Ticket Contract and Health
                     Acknowledgement
                   </label>
+                  <ErrorMessage
+                    name="agreeToTicketContractAndHealthAcknowledgement"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
                 </div>
                 <div className="flex items-center">
                   <div className="mr-6">
@@ -224,16 +271,20 @@ const PaymentPage = () => {
                       $
                       {values.paymentChoice === 'minimumAmount'
                         ? '200.00'
-                        : Number(totalPrice).toFixed(2)}
+                        : cruise?.total.toFixed(2)}
                     </span>
                   </div>
-                  <button type="submit">Book this cruise</button>
-                  {/* <Link
-                    href="/booking-completed"
-                    className="bg-blue-500 px-6 py-3 text-white"
+                  <button
+                    disabled={!isValid || Object.keys(touched).length === 0}
+                    className={`bg-blue-500 px-6 py-3 text-white ${
+                      !isValid || Object.keys(touched).length === 0
+                        ? 'cursor-not-allowed'
+                        : ''
+                    }`}
+                    type="submit"
                   >
                     Book this cruise
-                  </Link> */}
+                  </button>
                 </div>
               </aside>
             </Form>

@@ -24,7 +24,6 @@ model User {
 
   accounts Account[]
   sessions Session[]
-  cruises  Cruise[]
 }
 
 model Account {
@@ -62,42 +61,65 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Guests {
-  id       String @id @default(cuid())
-  adults   Int
-  children Int
-  cruise   Cruise @relation(fields: [cruiseId], references: [id])
-  cruiseId String @unique
-}
+model GuestForm {
+  id                 String  @id @default(cuid())
+  birthDay           String
+  birthMonth         String
+  birthYear          String
+  citizenship        String
+  email              String
+  firstName          String
+  futureCruiseCredit Boolean
+  gender             String
+  lastName           String
+  phoneNumber        String
+  specialOffers      Boolean
+  state              String
 
-model Room {
-  id          String @id @default(cuid())
-  type        String
-  price       Int
-  description String
-  image       String
-  cruise      Cruise @relation(fields: [cruiseId], references: [id])
-  cruiseId    String @unique
+  // Define the relationship with Cruise
+  cruiseId String
+  cruise   Cruise @relation(fields: [cruiseId], references: [id])
 }
 
 model Cruise {
-  id                     String   @id @default(cuid())
-  userId                 String
-  packageTitle           String
-  departurePort          String
-  departureDate          String
-  arrivalDate            String
-  countriesVisiting      String[]
-  price                  Int
-  subtotal               Int
-  taxes                  Int
-  totalPrice             Int
-  roomType               String
-  room                   Room?
-  roomAmount             Int
-  guests                 Guests?
-  handicapAccessibleRoom Boolean
-  roomPreference         Int
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                                            String      @id @default(cuid())
+  agreeToTicketContractAndHealthAcknowledgement Boolean
+  amountOfNights                                Int
+  arrivalDate                                   String
+  cardCVV                                       Int
+  cardExpMonth                                  String
+  cardExpYear                                   String
+  cardNumber                                    String
+  countriesVisitring                            String[]
+  dateId                                        String
+  departDate                                    String
+  diningTime                                    String
+  direction                                     String
+  directionCities                               String
+  email                                         String
+  firstName                                     String
+  guests                                        Json
+  handicapAccessibleRoom                        Boolean
+  lastName                                      String
+  originalRoomPrice                             Int
+  packageTitle                                  String
+  paymentAmountToday                            Int
+  paymentChoice                                 String
+  pickYourRoomPrice                             Int
+  roomAmount                                    Int
+  roomPreferenceType                            String
+  roomPrice                                     Int
+  roomType                                      String
+  sailDate                                      String
+  shipDeck                                      Int
+  shipName                                      String
+  shipRoomNumber                                Int
+  shipSection                                   String
+  subtotal                                      Int
+  summaryExtras                                 Int
+  taxes                                         Int
+  tipTipHooray                                  Int
+  total                                         Int
+  vacationProtection                            Int
+  guestForms                                     GuestForm[]
 }

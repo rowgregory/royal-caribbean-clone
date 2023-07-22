@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <main className="flex flex-col items-center justify-between ">
       <div className="relative">
-        <div className="flex justify-center w-[calc(100vw)] md-lg:w-[calc(100vw-15px)] bg-[url('./assets/home/landing_jumbotron.jpeg')]  h-[456px] bg-cover bg-center bg-no-repeat">
+        <div className="flex justify-center w-[calc(100vw)] md-lg:w-[calc(100vw-15px)] bg-landing_jumbotron  h-[456px] bg-cover bg-center bg-no-repeat">
           {/*  */}
           <div className="absolute inset-0 bg-black opacity-40"></div>
           <div className="absolute h-full flex flex-col justify-center w-full px-[36px] max-w-[90rem]">

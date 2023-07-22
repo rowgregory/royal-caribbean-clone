@@ -1,34 +1,30 @@
 import Image from 'next/image';
 import React from 'react';
-import CruiseNearMe1 from '../../assets/home/cruises_near_me_1.jpeg';
-import CruiseNearMe2 from '../../assets/home/cruises_near_me_2.jpeg';
-import CruiseNearMe3 from '../../assets/home/cruises_near_me_3.jpeg';
-import CruiseNearMe4 from '../../assets/home/cruises_near_me_4.jpeg';
 
 const cruisesNearMeData = [
   {
-    image: CruiseNearMe1,
+    image: "/cruises_near_me_1.jpeg",
     text1: 'CRUISES FROM',
     text2: 'FLORIDA',
     text3: 'STARTING FROM',
     text4: '$242',
   },
   {
-    image: CruiseNearMe2,
+    image: "/cruises_near_me_2.jpeg",
     text1: 'CRUISES FROM',
     text2: 'TEXTAS',
     text3: 'STARTING FROM',
     text4: '$272',
   },
   {
-    image: CruiseNearMe3,
+    image: "/cruises_near_me_3.jpeg",
     text1: 'CRUISES FROM',
     text2: 'CAPE LIBERTY',
     text3: 'STARTING FROM',
     text4: '$342',
   },
   {
-    image: CruiseNearMe4,
+    image: "/cruises_near_me_4.jpeg",
     text1: 'CRUISES FROM',
     text2: 'WEST COAST',
     text3: 'STARTING FROM',
@@ -55,7 +51,11 @@ const GreatCruisesNearMe = () => {
               <Image
                 src={cruise.image}
                 alt='Cruise near me'
-                className='w-full rounded-md'
+                className="w-full h-auto rounded-md"
+                width="0"
+                height="0"
+                sizes="100vw"
+                priority={true}
               />
               <div className='absolute inset-0 left-0 p-4 flex justify-center items-center flex-col w-full'>
                 <p className='text-white text-xl'>{cruise.text1}</p>

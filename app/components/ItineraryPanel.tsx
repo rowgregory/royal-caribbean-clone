@@ -7,6 +7,7 @@ import { FiShare } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
 import { useCruiseContext } from '../context/cruiseContext';
 import Link from 'next/link';
+import LoadingSpinner from './LoadingSpinner';
 
 const ItineraryPanel = React.memo(({ openItineraryPanel, cruise }: any) => {
   const [roomType, setRoomType] = useState('Interior');
@@ -25,50 +26,34 @@ const ItineraryPanel = React.memo(({ openItineraryPanel, cruise }: any) => {
     ...rest
   } = cruise;
 
-  const cheapestCruise = availableDates?.reduce(
-    (cheapest: any, current: any) => {
-      const currentCheapestPrice = Math.min(
-        ...current.rooms.map((room: any) => room.price)
+  // Memoized data transformation
+  const cruiseDetails = useMemo(() => {
+    return cruise?.availableDates?.map((dates: any) => {
+      const selectedRoom = dates?.rooms?.find(
+        (room: any) => room.type === roomType
       );
+      const { description, image, ...props } = selectedRoom;
 
-      if (!cheapest || currentCheapestPrice < cheapest.price) {
-        return {
-          rooms: current.rooms,
-          date: current.date,
-        };
-      }
-
-      return cheapest;
-    },
-    null
-  );
-
-    // Memoized data transformation
-    const cruiseDetails = useMemo(() => {
-      return cruise?.availableDates?.map((dates: any) => {
-        const selectedRoom = dates?.rooms?.find((room: any) => room.type === roomType);
-        const { description, image, ...props } = selectedRoom;
-  
-        return {
-          dateId: dates.id,
-          sailDate: dates.date,
-          departDate: dates.departDate,
-          arrivalDate: dates.arrivalDate,
-          roomPrice: props.price,
-          roomType: props.type,
-          originalRoomPrice: props.originalPrice,
-          pickYourRoomPrice: props.pickYourRoomPrice,
-          ...rest,
-        };
-      });
-    }, [cruise?.availableDates, rest, roomType]);
+      return {
+        dateId: dates.id,
+        sailDate: dates.date,
+        departDate: dates.departDate,
+        arrivalDate: dates.arrivalDate,
+        roomPrice: props.price,
+        roomType: props.type,
+        originalRoomPrice: props.originalPrice,
+        ...rest,
+      };
+    });
+  }, [cruise, rest, roomType]);
 
   const handleBookingClick = (details: any) => {
+
     setBookingStep(1);
     addCruise(details);
   };
 
-  return (
+  return (<>
     <div
       className={`${
         openItineraryPanel
@@ -110,7 +95,7 @@ const ItineraryPanel = React.memo(({ openItineraryPanel, cruise }: any) => {
           {cruise?.availableDates?.length} available dates
         </div>
         <div className="flex justify-between w-full mt-4">
-          {cheapestCruise?.rooms?.map((room: any, i: number) => (
+          {cruise?.availableDates && cruise?.availableDates[0]?.rooms?.map((room: any, i: number) => (
             <div
               key={i}
               className={`${
@@ -163,7 +148,7 @@ const ItineraryPanel = React.memo(({ openItineraryPanel, cruise }: any) => {
           );
         })}
       </div>
-    </div>
+    </div></>
   );
 });
 ItineraryPanel.displayName = 'ItineraryPanel';

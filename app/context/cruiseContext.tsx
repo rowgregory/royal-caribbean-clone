@@ -2,9 +2,19 @@
 
 import { createContext, useReducer, useContext, useEffect } from 'react';
 
+export interface CruiseContextProps {
+  cruise: any;
+  step: number;
+  addCruise: (cruise: any) => void;
+  setBookingStep: (step: number) => void;
+  updateCruise: (fields: any) => void;
+  removeFieldsFromCruise: (fields: any) => void;
+}
+
 const initialState = {};
 
 export const CruiseContext = createContext({
+  loading: true,
   cruise: {},
   step: 0,
   successPay: false,
@@ -12,51 +22,58 @@ export const CruiseContext = createContext({
   setBookingStep: (step: any) => step,
   updateCruise: (fields: any) => fields,
   removeFieldsFromCruise: (fields: any) => fields,
-  payCruise: (cruise: any) => cruise
+  payCruise: (cruise: any) => cruise,
 });
 
 const cruiseReducer = (state: any, action: any) => {
   switch (action.type) {
     case 'ADD_CRUISE':
-      localStorage.setItem('cruise', JSON.stringify( { ...action.payload }))
+      localStorage.setItem('cruise', JSON.stringify({ ...action.payload }));
       return {
         ...state,
+        loading: false,
         cruise: {
           ...action.payload,
         },
       };
     case 'SET_BOOKING_STEP':
-      localStorage.setItem('step', action.payload )
+      localStorage.setItem('step', action.payload);
       return {
         ...state,
+        loading: false,
         step: action.payload,
       };
     case 'UPDATE_CRUISE':
-      localStorage.setItem('cruise', JSON.stringify({ ...state.cruise, ...action.payload }))
+      localStorage.setItem(
+        'cruise',
+        JSON.stringify({ ...state.cruise, ...action.payload })
+      );
       return {
         ...state,
+        loading: false,
         cruise: {
           ...state.cruise,
           ...action.payload,
         },
       };
     case 'REMOVE_FIELDS_FROM_CRUISE':
-      localStorage.setItem('cruise', JSON.stringify( { ...action.payload }))
+      localStorage.setItem('cruise', JSON.stringify({ ...action.payload }));
       return {
         ...state,
+        loading: false,
         cruise: {
           ...action.payload,
         },
       };
     case 'PAY_CRUISE':
-      console.log('ACTION PAYLOAD: ', action.payload)
-      localStorage.setItem('cruise', JSON.stringify( { ...action.payload }))
+      localStorage.setItem('cruise', JSON.stringify({ ...action.payload }));
       return {
         ...state,
+        loading: false,
         cruise: {
           ...action.payload,
         },
-        successPay: true
+        successPay: true,
       };
     default:
       return { ...state };
@@ -66,7 +83,7 @@ const cruiseReducer = (state: any, action: any) => {
 export const CruiseProvider = (props: any) => {
   const [state, dispatch] = useReducer(cruiseReducer, initialState);
 
-    useEffect(() => {
+  useEffect(() => {
     const cruiseFromStorage = localStorage.getItem('cruise');
     const stepFromStorage = localStorage.getItem('step');
 
@@ -75,28 +92,38 @@ export const CruiseProvider = (props: any) => {
     }
 
     if (stepFromStorage) {
-      dispatch({ type: 'SET_BOOKING_STEP', payload: JSON.parse(stepFromStorage) });
+      dispatch({
+        type: 'SET_BOOKING_STEP',
+        payload: JSON.parse(stepFromStorage),
+      });
     }
   }, []);
 
-  const addCruise = (cruise: any) =>
+
+  const addCruise = (cruise: any) => {
     dispatch({ type: 'ADD_CRUISE', payload: cruise });
+  };
 
-  const setBookingStep = (step: number) =>
+  const setBookingStep = (step: number) => {
     dispatch({ type: 'SET_BOOKING_STEP', payload: step });
+  };
 
-  const updateCruise = (fields: any) =>
+  const updateCruise = (fields: any) => {
     dispatch({ type: 'UPDATE_CRUISE', payload: fields });
+  };
 
-  const removeFieldsFromCruise = (fields: any) =>
+  const removeFieldsFromCruise = (fields: any) => {
     dispatch({ type: 'REMOVE_FIELDS_FROM_CRUISE', payload: fields });
+  };
 
-  const payCruise = (fields: any) =>
+  const payCruise = (fields: any) => {
     dispatch({ type: 'PAY_CRUISE', payload: fields });
+  };
 
   return (
     <CruiseContext.Provider
       value={{
+        loading: state.loading,
         cruise: state.cruise,
         step: state.step,
         successPay: state.successPay,
@@ -104,7 +131,7 @@ export const CruiseProvider = (props: any) => {
         setBookingStep,
         updateCruise,
         removeFieldsFromCruise,
-        payCruise
+        payCruise,
       }}
       {...props}
     />

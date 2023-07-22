@@ -21,7 +21,10 @@ const SecondaryHeader = () => {
           <Image
             src={country?.flag}
             alt='flag'
-            style={{ width: '20px', height: '10px' }}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className='w-7 h-auto'
           />
         </Link>
         <div

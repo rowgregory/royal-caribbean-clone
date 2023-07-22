@@ -13,7 +13,6 @@ import GreatCruisesNearMe from './components/home/GreatCruisesNearMe';
 import GetRoyalDeals from './components/home/GetRoyalDeals';
 import PerfectDayAtCocoCay from './components/home/PerfectDayAtCocoCay';
 import Image from 'next/image';
-import CC from './assets/home/cc.png';
 import AwardWinningShips from './components/home/AwardWinningShips';
 import Footer from './components/Footer';
 
@@ -33,9 +32,13 @@ export default function Home() {
       <GetRoyalDeals />
       <PerfectDayAtCocoCay />
       <Image
-        src={CC}
+        src="/cc.png"
         alt='Credit Card offer'
         className='w-full max-h-[320px] max-w-[1920px] mx-auto'
+        width="0"
+        height="0"
+        sizes="100vw"
+        priority={true}
       />
       <AwardWinningShips />
       <Footer />

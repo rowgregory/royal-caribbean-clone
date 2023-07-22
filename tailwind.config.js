@@ -18,6 +18,8 @@ module.exports = {
         'kapra-condensed': ['Kapra-Condensed', 'sans-serif'],
       },
       backgroundImage: {
+        'landing_jumbotron': "url('/landing_jumbotron.jpeg')",
+        'signin': "url('/signin-bg.jpeg')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',

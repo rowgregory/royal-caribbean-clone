@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { useCruiseContext } from '../context/cruiseContext';
 
 const useBookingStep = (step: number, rest?: any) => {
-  const { setBookingStep , removeFieldsFromCruise} = useCruiseContext() as any;
+  const { setBookingStep, removeFieldsFromCruise } = useCruiseContext() as any;
   useEffect(() => {
     const handleBackNavigation = (event: any) => {
       if (event.button === 3 || (event.ctrlKey && event.button === 0)) {
         setBookingStep(step);
-        if(rest) {
+        if (rest) {
           removeFieldsFromCruise(rest)
         }
       }
@@ -18,7 +18,7 @@ const useBookingStep = (step: number, rest?: any) => {
     return () => {
       document.removeEventListener('mousedown', handleBackNavigation);
     };
-  }, [setBookingStep, step]);
+  }, [removeFieldsFromCruise, rest, setBookingStep, step]);
 }
 
 export default useBookingStep;

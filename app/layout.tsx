@@ -20,7 +20,9 @@ export default function RootLayout({
         <SessionProvider>
           <CruiseProvider>
             <TranslationProvider>
-              <LanguageProvider>{children}</LanguageProvider>
+              <LanguageProvider>
+                  {children}
+              </LanguageProvider>
             </TranslationProvider>
           </CruiseProvider>
         </SessionProvider>

@@ -1,13 +1,11 @@
 'use client';
 
-import US from '../assets/flags/us.jpeg';
-
 import { createContext, useReducer, useContext } from 'react';
 
 const initialState = {
   country: {
     lng: 'en',
-    flag: US,
+    flag: "/us.jpeg",
     textKey: 'United States',
     number: '866-562-7625',
   },
@@ -17,7 +15,7 @@ export const LanguageContext = createContext<{
   country: { lng: string; flag: any; textKey: string };
   selectLanguage: (lang: string) => void;
 }>({
-  country: { lng: 'en', flag: US, textKey: 'United States' },
+  country: { lng: 'en', flag: "/us.jpeg", textKey: 'United States' },
   selectLanguage: (lang: string) => lang,
 });
 
