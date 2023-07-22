@@ -1,6 +1,6 @@
 'use client';
 
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import { useState } from 'react';
 import { useCruiseContext } from '@/app/context/cruiseContext';
 import CabinSelector from '@/app/components/cabin/CabinSelector';

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useCruiseContext } from '@/app/context/cruiseContext';
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import { Form, Formik } from 'formik';
 import { useRouter } from 'next/navigation';
 import DiningOptions from '@/app/components/summary/DiningOptions';

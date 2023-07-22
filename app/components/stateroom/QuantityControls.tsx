@@ -1,4 +1,4 @@
-import QuantitySelector from '@/app/utils/QuantitySelector';
+import QuantitySelector from '@/app/components/QuantitySelector';
 import dynamic from 'next/dynamic';
 
 const AiOutlineMinus = dynamic(() =>

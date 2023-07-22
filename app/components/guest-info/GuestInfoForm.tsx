@@ -2,7 +2,7 @@ import { useCruiseContext } from '@/app/context/cruiseContext';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import validateGuestInfo from '@/app/utils/validateGuestInfo';
+import validateGuestInfo from '@/app/utils/validate/validateGuestInfo';
 import GuestNameInputs from './GuestNameInputs';
 import GuestGenderSelect from './GuestGenderSelect';
 import GuestBirthDateSelect from './GuestBirthDateSelect';

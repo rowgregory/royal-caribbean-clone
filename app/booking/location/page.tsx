@@ -1,7 +1,7 @@
 'use client';
 
 import LocationSelector from '@/app/components/location/LocationSelector';
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import { motion } from 'framer-motion';
 
 const LocationPage = () => {

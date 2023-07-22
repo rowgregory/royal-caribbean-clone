@@ -3,8 +3,8 @@
 import createCruise from '@/app/actions/createCruise';
 import { useCruiseContext } from '@/app/context/cruiseContext';
 import months from '@/app/utils/months';
-import useBookingStep from '@/app/utils/useBookingStep';
-import validatePaymentPage from '@/app/utils/validPaymentPage';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
+import validatePaymentPage from '@/app/utils/validate/validPaymentPage';
 import { Form, Formik, Field, ErrorMessage } from 'formik';
 import { useRouter } from 'next/navigation';
 

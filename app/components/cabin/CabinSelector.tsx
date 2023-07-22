@@ -1,4 +1,4 @@
-import CabinSVG from '../../components/CabinSVG'
+import CabinSVG from './CabinSVG'
 
 const CabinSelector = ({ roomNumber, setRoomNumber }: any) => {
   return (

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useCruiseContext } from '../context/cruiseContext';
+import { useCruiseContext } from '../../context/cruiseContext';
 
 const useBookingStep = (step: number, rest?: any) => {
   const { setBookingStep, removeFieldsFromCruise } = useCruiseContext() as any;

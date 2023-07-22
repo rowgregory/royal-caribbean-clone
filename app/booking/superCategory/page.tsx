@@ -1,7 +1,7 @@
 'use client';
 
 import CategorySelector from '@/app/components/super-category/CategorySelector';
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import { motion } from 'framer-motion';
 
 const SuperCategoryPage = () => {

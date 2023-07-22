@@ -1,7 +1,7 @@
 'use client';
 
 import RoomPreferenceSelector from '@/app/components/pricing-options/RoomPreferenceSelctor';
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import { motion } from 'framer-motion';
 
 const PricingOptionsPage = () => {

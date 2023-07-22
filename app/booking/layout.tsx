@@ -1,9 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect } from 'react';
-import { useCruiseContext } from '../context/cruiseContext';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import Sidebar from '../components/booking/Sidebar';
 
 const Header = () => {
@@ -27,12 +25,7 @@ const MainContent = ({ children }: any) => {
 };
 
 const BookingLayout = ({ children }: any) => {
-  // const router = useRouter();
-  // const { successPay } = useCruiseContext() as any;
 
-  // useEffect(() => {
-  //   if (successPay) router.push('/booking/complete');
-  // }, [successPay, router]);
 
   return (
     <div className="bg-[#f7f8f9] min-h-screen">

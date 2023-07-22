@@ -1,7 +1,7 @@
 import { LanguageProvider } from './context/LanguageProvider';
 import './globals.css';
-import TranslationProvider from './components/TranslationProvider';
-import SessionProvider from './components/SessionProvider';
+import TranslationProvider from './context/TranslationProvider';
+import SessionProvider from './context/SessionProvider';
 import { CruiseProvider } from './context/cruiseContext';
 
 export const metadata = {

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useCruiseContext } from '@/app/context/cruiseContext';
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import GuestIdentifiers from '@/app/components/guest-info/GuestIdentifiers';
 import GuestInfoForm from '@/app/components/guest-info/GuestInfoForm';
 import { motion } from 'framer-motion';

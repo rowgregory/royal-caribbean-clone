@@ -1,6 +1,6 @@
 'use client';
 
-import useBookingStep from '@/app/utils/useBookingStep';
+import useBookingStep from '@/app/utils/hooks/useBookingStep';
 import React, { useState } from 'react';
 import { useCruiseContext } from '@/app/context/cruiseContext';
 import ShipImage from '@/app/components/deck/ShipImage';

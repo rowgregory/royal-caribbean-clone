@@ -1,7 +1,7 @@
 'use client';
 
 import { useCruiseContext } from '@/app/context/cruiseContext';
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import TopSection from './TopSection';
 import MiddleSection from './MiddleSection';
@@ -21,11 +21,9 @@ const Sidebar = () => {
 
   return (
     <aside className="w-full max-w-[380px] mt-6 py-4 bg-white rounded-md min-h-[calc(100vh-84px)]">
-      <Suspense fallback={<div>Loading...</div>}>
-        <TopSection handleDetailsToggle={handleDetailsToggle} />
-        <MiddleSection showDetails={showDetails} />
-        <BottomSection />
-      </Suspense>
+      <TopSection handleDetailsToggle={handleDetailsToggle} />
+      <MiddleSection showDetails={showDetails} />
+      <BottomSection />
     </aside>
   );
 };
