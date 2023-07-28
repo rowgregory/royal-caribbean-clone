@@ -1,10 +1,11 @@
 const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
-  <svg className='mx-auto'
+  <svg
+    className="mx-auto"
     xmlns="http://www.w3.org/2000/svg"
     zoomAndPan="magnify"
     enableBackground="new 0 0 13624.583 5483.152"
     version="1.1"
-    width="500.0"
+    width="100%"
     preserveAspectRatio="xMidYMid meet"
     viewBox="7529.2314 428.55087 742.0459 3940.5386"
     height="2655.185"
@@ -5462,7 +5463,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4147"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="8114.361"
@@ -7104,7 +7104,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3953"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="8017.593"
@@ -7117,7 +7116,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4201"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="8017.593"
@@ -7154,7 +7152,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3986"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="8017.593"
@@ -8305,11 +8302,11 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         strokeMiterlimit="10"
       ></rect>
       <rect
-      onClick={() => setRoomNumber(9418)}
+        onClick={() => setRoomNumber(9418)}
         x="7960.155"
         y="626.972"
         transform="matrix(6.123234e-17 -1 1 6.123234e-17 7360.7183 8649.2646)"
-        fill={roomNumber === 9418 ? "#0373C3" : "#CCA693"}
+        fill={roomNumber === 9418 ? '#0373C3' : '#CCA693'}
         width="89.672"
         className="cabinShape cursor-pointer"
         height="34.603"
@@ -8317,7 +8314,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7994.758"
@@ -8333,11 +8329,11 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         strokeMiterlimit="10"
       ></rect>
       <rect
-      onClick={() => setRoomNumber(9422)}
+        onClick={() => setRoomNumber(9422)}
         x="8029.361"
         y="626.972"
         transform="matrix(6.123234e-17 -1 1 6.123234e-17 7429.9238 8718.4697)"
-        fill={roomNumber === 9422 ? "#0373C3" : "#CCA693"}
+        fill={roomNumber === 9422 ? '#0373C3' : '#CCA693'}
         width="89.672"
         className="cabinShape cursor-pointer"
         height="34.603"
@@ -8345,7 +8341,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7709.907"
@@ -8370,7 +8365,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7797.734"
@@ -8383,13 +8377,12 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
-      onClick={() => setRoomNumber(9428)}
+        onClick={() => setRoomNumber(9428)}
         x="7797.734"
         y="785.833"
-        fill={roomNumber === 9428 ? "#0373C3" : "#CCA693"}
+        fill={roomNumber === 9428 ? '#0373C3' : '#CCA693'}
         width="69.205"
         className="cabinShape cursor-pointer"
         height="34.244"
@@ -8397,7 +8390,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7936.145"
@@ -8410,7 +8402,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7936.145"
@@ -8423,7 +8414,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7936.145"
@@ -8436,7 +8426,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="8017.593"
@@ -8449,7 +8438,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3854"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7771.526"
@@ -8476,7 +8464,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3949"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7840.732"
@@ -8503,7 +8490,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3949"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7909.938"
@@ -8530,13 +8516,12 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.3949"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
-      onClick={() => setRoomNumber(9430)}
+        onClick={() => setRoomNumber(9430)}
         x="7800.658"
         y="926.216"
-        fill={roomNumber === 9430 ? "#0373C3" : "#CCA693"}
+        fill={roomNumber === 9430 ? '#0373C3' : '#CCA693'}
         width="65.608"
         className="cabinShape cursor-pointer"
         height="39.037"
@@ -8544,7 +8529,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7800.658"
@@ -8606,7 +8590,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7873.334"
@@ -8620,7 +8603,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7838.731"
@@ -8647,7 +8629,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7935.471"
@@ -8768,7 +8749,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7838.921"
@@ -8782,7 +8762,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7873.523"
@@ -8796,7 +8775,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7838.731"
@@ -8823,7 +8801,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7935.471"
@@ -8884,7 +8861,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         stroke="#9D9DA0"
         strokeWidth="0.4009"
         strokeMiterlimit="10"
-        
       ></rect>
       <rect
         x="7832.06"
@@ -11067,7 +11043,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 8126.8677 612.1331)"
           fill="#000000"
-          
         >
           9516
         </text>
@@ -12138,7 +12113,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 8040.5264 843.8954)"
           fill="#000000"
-          
         >
           9531
         </text>
@@ -12149,7 +12123,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 8040.5264 878.8455)"
           fill="#000000"
-          
         >
           9533
         </text>
@@ -12180,7 +12153,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 8040.5264 975.9804)"
           fill="#000000"
-          
         >
           9539
         </text>
@@ -12942,14 +12914,13 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         </g>
         <g>
           <text
-          onClick={() => setRoomNumber(9418)}
+            onClick={() => setRoomNumber(9418)}
             fontSize="15.99024"
             id="T9418"
             fontFamily="'Avenir-Black'"
             className="cabinNumber cursor-pointer"
             transform="matrix(0 -1 1 0 8013.8447 668.9196)"
-            fill={roomNumber === 9418  ? "#FFFFFF" :  '#000'}
-            
+            fill={roomNumber === 9418 ? '#FFFFFF' : '#000'}
           >
             9418
           </text>
@@ -12968,14 +12939,13 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
         </g>
         <g>
           <text
-          onClick={() => setRoomNumber(9422)}
+            onClick={() => setRoomNumber(9422)}
             fontSize="15.99024"
             id="T9422"
             fontFamily="'Avenir-Black'"
             className="cabinNumber cursor-pointer"
             transform="matrix(0 -1 1 0 8078.438 668.9196)"
-            fill={roomNumber === 9422  ? "#FFFFFF" :  '#000'}
-            
+            fill={roomNumber === 9422 ? '#FFFFFF' : '#000'}
           >
             9422
           </text>
@@ -12997,7 +12967,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 8030.1274 739.1082)"
           fill="#000000"
-          
         >
           9523
         </text>
@@ -13021,7 +12990,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7857.1812 887.5908)"
             fill="#000000"
-            
           >
             9452
           </text>
@@ -13046,7 +13014,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7927.3467 887.5908)"
             fill="#000000"
-            
           >
             9456
           </text>
@@ -13071,20 +13038,18 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7994.3662 887.5908)"
             fill="#000000"
-            
           >
             9460
           </text>
         </g>
         <text
-        onClick={() => setRoomNumber(9430)}
+          onClick={() => setRoomNumber(9430)}
           fontSize="14.812000000000001"
           id="T9430"
           fontFamily="'Avenir-Black'"
           className="cabinNumber cursor-pointer"
           transform="matrix(1 -0.0052 0.0052 1 7810.7993 953.9447)"
-          fill={roomNumber === 9430  ? "#FFFFFF" :  '#000'}
-          
+          fill={roomNumber === 9430 ? '#FFFFFF' : '#000'}
         >
           9430
         </text>
@@ -13185,7 +13150,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7809.3066 740.3768)"
           fill="#000000"
-          
         >
           9424
         </text>
@@ -13196,19 +13160,17 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7809.3071 775.037)"
           fill="#000000"
-          
         >
           9426
         </text>
         <text
-        onClick={() => setRoomNumber(9428)}
+          onClick={() => setRoomNumber(9428)}
           fontSize="14.812000000000001"
           id="T9428"
           fontFamily="'Avenir-Black'"
           className="cabinNumber cursor-pointer"
           transform="matrix(1 -0.0052 0.0052 1 7809.3062 809.387)"
-          fill={roomNumber === 9428  ? "#FFFFFF" :  '#000'}
-          
+          fill={roomNumber === 9428 ? '#FFFFFF' : '#000'}
         >
           9428
         </text>
@@ -13219,7 +13181,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7947.5522 740.467)"
           fill="#000000"
-          
         >
           9423
         </text>
@@ -13230,7 +13191,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7947.5518 774.0774)"
           fill="#000000"
-          
         >
           9425
         </text>
@@ -13241,7 +13201,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7947.5518 807.6874)"
           fill="#000000"
-          
         >
           9427
         </text>
@@ -13316,7 +13275,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7810.7998 1283.2764)"
           fill="#000000"
-          
         >
           9448
         </text>
@@ -13367,7 +13325,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
           className="cabinNumber"
           transform="matrix(1 -0.0052 0.0052 1 7944.9077 1285.4044)"
           fill="#000000"
-          
         >
           9449
         </text>
@@ -13379,7 +13336,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7893.105 996.8898)"
             fill="#000000"
-            
           >
             9453
           </text>
@@ -13392,7 +13348,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7927.8594 996.8893)"
             fill="#000000"
-            
           >
             9455
           </text>
@@ -13417,7 +13372,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7927.8594 1084.5055)"
             fill="#000000"
-            
           >
             9464
           </text>
@@ -13430,7 +13384,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7893.4741 1193.0646)"
             fill="#000000"
-            
           >
             9461
           </text>
@@ -13443,7 +13396,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7925.6465 1192.8464)"
             fill="#000000"
-            
           >
             9463
           </text>
@@ -13468,7 +13420,6 @@ const CabinSVG = ({ roomNumber, setRoomNumber }: any) => (
             className="cabinNumber"
             transform="matrix(0 -1 1 0 7925.8862 1271.9128)"
             fill="#000000"
-            
           >
             9470
           </text>

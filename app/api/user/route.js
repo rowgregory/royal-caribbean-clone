@@ -48,16 +48,20 @@ export async function POST(request) {
           name: foundUser.name,
         };
         return NextResponse.json(userWithAdditionalAttributes);
+      } else {
+        return NextResponse.json({ message: "Invalid Credentials" });
       }
     } catch (error) {
-      return NextResponse.json({ message: "Invalid Password" });
+      return NextResponse.json({ message: "Internal Server Error" });
     }
   } else if (query === "register") {
     const existingUser = await prisma.user.findFirst({
       where: { email: user.email },
     });
 
-    if (existingUser) return NextResponse("User already exists");
+    if (existingUser) {
+      return NextResponse.json({ message: "User already exists" });
+    }
 
     const salt = 10;
     const hashedPassword = await bcrypt.hash(user.password, salt);
@@ -86,6 +90,6 @@ export async function POST(request) {
     return NextResponse.json(true);
   } else {
     // Invalid endpoint
-    return NextResponse.error("Invalid endpoint");
+    return NextResponse.error({ message: "Invalid endpoint" });
   }
 }

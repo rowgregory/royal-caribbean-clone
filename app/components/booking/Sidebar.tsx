@@ -1,6 +1,9 @@
 'use client';
 
-import { useCruiseContext } from '@/app/context/cruiseContext';
+import {
+  CruiseContextProps,
+  useCruiseContext,
+} from '@/app/context/cruiseContext';
 import React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import TopSection from './TopSection';
@@ -9,7 +12,7 @@ import BottomSection from './BottomSection';
 
 const Sidebar = () => {
   const [showDetails, setShowDetails] = useState(true);
-  const { step } = useCruiseContext() as any;
+  const { step, cruise } = useCruiseContext() as CruiseContextProps;
 
   useEffect(() => {
     if (step >= 2) setShowDetails(false);
@@ -20,10 +23,15 @@ const Sidebar = () => {
   }, [setShowDetails]);
 
   return (
-    <aside className="w-full max-w-[380px] mt-6 py-4 bg-white rounded-md min-h-[calc(100vh-84px)]">
-      <TopSection handleDetailsToggle={handleDetailsToggle} />
-      <MiddleSection showDetails={showDetails} />
-      <BottomSection />
+    <aside className="w-full min-w-[340px] max-w-[380px] mt-6 py-4 bg-white rounded-md min-h-[calc(100vh-84px)]">
+      <TopSection
+        handleDetailsToggle={handleDetailsToggle}
+        show={showDetails}
+        cruise={cruise}
+        step={step}
+      />
+      <MiddleSection showDetails={showDetails} cruise={cruise} step={step} />
+      <BottomSection cruise={cruise} step={step} />
     </aside>
   );
 };

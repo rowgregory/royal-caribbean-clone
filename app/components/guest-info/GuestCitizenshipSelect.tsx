@@ -3,7 +3,7 @@ import { ErrorMessage, Field } from 'formik';
 
 const GuestCitizenshipSelect = () => {
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2">
       <label htmlFor="citizenship" className="text-sm font-light text-gray-800">
         Citizenship
       </label>

@@ -2,8 +2,8 @@ import { ErrorMessage, Field } from 'formik';
 
 const GuestContactInputs = () => {
   return (
-    <div className="flex gap-10 px-10">
-      <div className="w-1/2">
+    <div className="flex flex-col md:flex-row gap-10 px-10">
+      <div className="w-full md:w-1/2">
         <label htmlFor="email" className="text-sm font-light text-gray-800">
           Email Address
         </label>
@@ -20,7 +20,7 @@ const GuestContactInputs = () => {
           className="text-red-500 text-sm mt-1"
         />
       </div>
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2">
         <label
           htmlFor="phoneNumber"
           className="text-sm font-light text-gray-800"

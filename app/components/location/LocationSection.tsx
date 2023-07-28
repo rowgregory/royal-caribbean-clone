@@ -7,7 +7,10 @@ const LocationSection = ({ obj }: any) => {
     >
       <div className="flex flex-col">
         <div className="text-2xl mb-3 text-gray-800">{obj.section}</div>
-        <div className="text-xs text-gray-800">{obj.detail}</div>
+        <div className="hidden md:block text-xs text-gray-800">
+          {obj.detail}
+        </div>
+        <div className="block text-xs text-gray-800 md:hidden">Included</div>
       </div>
       <ContinueButton
         payload={{ shipSection: obj.section }}

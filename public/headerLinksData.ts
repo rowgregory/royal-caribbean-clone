@@ -1,23 +1,23 @@
-const headerLinksData = [
+const headerLinksData = (t: any) => [
   {
     linkKey: '/cruises',
-    textKey: 'FIND A CRUISE',
+    textKey: t('header.findACruise'),
   },
   {
     linkKey: '',
-    textKey: 'DEALS',
+    textKey: t('header.deals'),
   },
   {
     linkKey: '',
-    textKey: 'SHIPS',
+    textKey: t('header.ships'),
   },
   {
     linkKey: '',
-    textKey: 'DESTINATIONS',
+    textKey: t('header.destinations'),
   },
   {
     linkKey: '',
-    textKey: 'MANAGE MY CRUISE',
+    textKey: t('header.manageMyCruise'),
   },
 ];
 

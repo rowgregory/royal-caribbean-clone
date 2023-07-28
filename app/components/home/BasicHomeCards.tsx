@@ -8,7 +8,7 @@ const oswald = Oswald({ subsets: ['latin'] });
 
 const BasicHomeCards = () => {
   return (
-    <div className="grid grid-cols-4 gap-3 max-w-[1329px] mx-auto mb-14">
+    <div className="px-4 md:px-10 grid-cols-1 grid md:grid-cols-2 lg:grid-cols-4 gap-3 max-w-[1240px] mx-auto mb-14 mt-10">
       {basicHomeCardData.map((card: any, i: number) => (
         <Link href={card.linkKey} key={i}>
           <div className="relative">
@@ -25,7 +25,9 @@ const BasicHomeCards = () => {
               <h2 className={`text-sm tracking-[1px] font-[200]`}>
                 {card.text1}
               </h2>
-              <p className={`text-[32px] ${oswald.className}`}>{card.text2}</p>
+              <p className={`text-2xl md:text-[32px] ${oswald.className}`}>
+                {card.text2}
+              </p>
               <p className="text-xs tracking-[1px]">{card.text3}</p>
               <p className={`text-[32px] ${oswald.className}`}>{card.text4}</p>
               <button className="text-xs bg-yellow-500 hover:bg-yellow-700 text-black py-3 tracking-[1px] px-7 rounded mt-2">

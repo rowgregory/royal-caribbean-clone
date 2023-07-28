@@ -1,12 +1,4 @@
-'use client'
-
-import {
-  CruiseContextProps,
-  useCruiseContext,
-} from '@/app/context/cruiseContext';
-
-const PriceInfo = () => {
-  const { cruise } = useCruiseContext() as CruiseContextProps;
+const PriceInfo = ({ cruise }: any) => {
   return (
     <div className="flex flex-col justify-center items-end">
       <div className="text-sm">From USD* /Person</div>

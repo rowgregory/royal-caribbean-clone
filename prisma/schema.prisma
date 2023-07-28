@@ -90,7 +90,7 @@ model Cruise {
   cardExpMonth                                  String
   cardExpYear                                   String
   cardNumber                                    String
-  countriesVisitring                            String[]
+  countriesVisiting                             String[]
   dateId                                        String
   departDate                                    String
   diningTime                                    String
@@ -121,5 +121,5 @@ model Cruise {
   tipTipHooray                                  Int
   total                                         Int
   vacationProtection                            Int
-  guestForms                                     GuestForm[]
+  guestForms                                    GuestForm[]
 }

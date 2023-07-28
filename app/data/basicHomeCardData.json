@@ -6,7 +6,7 @@
     "text3": "STARTING FROM",
     "text4": "$252",
     "text5": "BOOK NOW",
-    "linkKey": ""
+    "linkKey": "/cruises"
   },
   {
     "image": "/basic_home_card_2.jpeg",
@@ -15,7 +15,7 @@
     "text3": "STARTING FROM",
     "text4": "$436",
     "text5": "BOOK NOW",
-    "linkKey": ""
+    "linkKey": "/cruises"
   },
   {
     "image": "/basic_home_card_3.jpeg",
@@ -24,7 +24,7 @@
     "text3": "STARTING FROM",
     "text4": "233",
     "text5": "BOOK NOW",
-    "linkKey": ""
+    "linkKey": "/cruises"
   },
   {
     "image": "/basic_home_card_4.jpeg",
@@ -33,6 +33,6 @@
     "text3": "STARTING FROM",
     "text4": "349",
     "text5": "BOOK NOW",
-    "linkKey": ""
+    "linkKey": "/cruises"
   }
 ]

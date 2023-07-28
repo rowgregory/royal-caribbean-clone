@@ -10,7 +10,7 @@ const AiOutlinePlus = dynamic(() =>
 
 const QuantityControls = ({ quantity, handleQuantityChange }: any) => {
   return (
-    <div className="flex items-center bg-gray-100 w-fit h-[72px] p-3">
+    <div className="flex items-center justify-evenly bg-gray-100 w-full md:w-fit h-[72px] p-3">
       <QuantitySelector
         handleChange={() => handleQuantityChange(-1)}
         icon={<AiOutlineMinus size="25px" className="font-thin" />}

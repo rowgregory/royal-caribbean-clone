@@ -5,6 +5,7 @@ export async function GET(request) {
   const url = new URL(request.url);
   const query = url.searchParams.get("endpoint");
   const userEmail = url.searchParams.get("email");
+  const cruiseId = url.searchParams.get("cruiseId");
 
   if (query === "GET_CRUISES_BY_EMAIL") {
     try {
@@ -23,6 +24,23 @@ export async function GET(request) {
       console.error(error);
       return NextResponse.json(
         { error: "An error occurred while fetching the cruises." },
+        { status: 500 }
+      );
+    }
+  } else if (query === "GET_CRUISE_BY_ID") {
+    try {
+      const cruises = await prisma.cruise.findUnique({
+        where: {
+          id: cruiseId,
+        },
+        include: {
+          guestForms: true,
+        },
+      });
+      return NextResponse.json(cruises, { status: 200 });
+    } catch (error) {
+      return NextResponse.json(
+        { error: "An error occurred while fetching the cruise." },
         { status: 500 }
       );
     }

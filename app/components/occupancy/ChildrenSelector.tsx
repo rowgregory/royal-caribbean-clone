@@ -10,7 +10,8 @@ const AiOutlinePlus = dynamic(() =>
 
 const ChildrenSelector = ({ handleQuantityChange, quantity }: any) => {
   return (
-    <section className="flex items-center">
+    <section className="flex items-center justify-between xl:justify-start w-full">
+      <div className="block text-gray-600 xl:hidden">Children</div>
       <div className="pr-3">
         <div className="flex items-center bg-gray-100 w-fit h-[72px] p-3">
           <QuantitySelector
@@ -32,7 +33,7 @@ const ChildrenSelector = ({ handleQuantityChange, quantity }: any) => {
           />
         </div>
       </div>
-      <div className="text-gray-600">Children</div>
+      <div className="hidden xl:block text-gray-600">Children</div>
     </section>
   );
 };

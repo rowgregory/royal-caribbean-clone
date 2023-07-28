@@ -8,20 +8,24 @@ import getCruisesByEmail from '../actions/getCruisesByEmail';
 
 const AccountPage = () => {
   const [data, setData] = useState(null) as any;
+  const [loading, setLoading] = useState(true);
   const session = useSession();
   const user = session?.data?.user;
 
   useEffect(() => {
     getCruisesByEmail(user?.email).then((data) => {
       setData(data);
+      setLoading(false);
     });
   }, [user]);
 
   const ifACruiseHasBeenPurchased = data?.length > 0;
   return (
     <>
-      <div className="max-w-[984px] w-full mx-auto mt-10">
-        {ifACruiseHasBeenPurchased ? (
+      <div className="max-w-[1024px] w-full mx-auto mt-10 px-5">
+        {loading ? (
+          <>SKELETON LOADER</>
+        ) : ifACruiseHasBeenPurchased ? (
           <>
             {data?.map((obj: any, i: number) => (
               <section key={i}>
@@ -46,16 +50,18 @@ const AccountPage = () => {
           </>
         )}
       </div>
-      <section className="bg-[#f5f8fb] h-[150px] mb-64">
-        <div className="max-w-[984px] w-full h-full mx-auto mt-10 flex justify-between items-center px-6">
+      <section className="bg-[#f5f8fb] py-8 h-auto md:h-[150px] mt-12 mb-64 flex items-center">
+        <div className="max-w-[984px] w-full h-full mx-auto flex flex-col md:flex-row justify-between items-center px-6">
           <div className="flex flex-col">
-            <div className="text-2xl font-bold">You know you want to go</div>
+            <div className="text-2xl text-center md:text-left font-bold">
+              You know you want to go
+            </div>
             <div className="font-light">
               It’s never too soon to think about your next vacation.
             </div>
           </div>
           <Link
-            className="text-white rounded-md w-fit px-10 py-3 bg-sky-500 text-sm shadow-lg"
+            className="text-white rounded-md w-fit px-10 py-3 bg-sky-500 text-sm shadow-lg mt-4 md:mt-0"
             href="/cruises"
           >
             Plan a new cruise

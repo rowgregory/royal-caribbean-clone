@@ -2,7 +2,7 @@ import { ErrorMessage, Field } from 'formik';
 
 const GuestGenderSelect = () => {
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2">
       <label htmlFor="gender" className="text-sm font-light text-gray-800">
         Gender
       </label>

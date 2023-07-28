@@ -27,16 +27,12 @@ const SummaryPage = () => {
       tipTipHooray,
       diningTime: values.traditionalDiningTime,
       summaryExtras: vacationProtection + tipTipHooray,
-      total
+      total,
     };
 
     updateCruise(cruiseValues);
     setBookingStep(5);
     router.push('/booking/payment');
-  };
-
-  const validate = (values: any) => {
-    console.log('validate: ', values);
   };
 
   return (
@@ -45,51 +41,50 @@ const SummaryPage = () => {
       initial={{ opacity: 0, translateY: 150 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.75 }}
+      className="mb-10"
     >
-      <div className="mx-16 pt-5 mb-10">
-        <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-9">
-          Hang in there, just a few more details
-        </h1>
-        <div className="relative bg-white shadow-lg overflow-hidden">
-          <Formik
-            initialValues={{
-              traditionalDiningTime: '5:30',
-              tipTipHooray: false,
-              vacationProtection: 0,
-            }}
-            onSubmit={handleSubmit}
-            validate={validate}
-          >
-            {({ values }) => (
-              <Form>
-                <section className="p-8">
-                  <div className="text-lg text-blue-950 font-semibold">
-                    Dining & Options
-                  </div>
-                  <hr className="border-t border-gray-300 w-full my-5" />
-                  <DiningOptions values={values} />
-                  <hr className="border-t border-gray-300 w-full my-5" />
-                  <TipTipHooray values={values} />
-                  <hr className="border-t border-gray-300 w-full my-5" />
-                  <VacationProtection
-                    values={values}
-                    setVacationProtection={setVacationProtection}
-                    vacationProtection={vacationProtection}
-                  />
-                </section>
-
-                <div className="max-w-[932px] bg-gray-100 h-20 flex justify-end items-center pr-7">
-                  <button
-                    type="submit"
-                    className="bg-blue-600 rounded-sm w-fit text-white flex items-center justify-center px-8 py-3"
-                  >
-                    Continue
-                  </button>
+      <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-9">
+        Hang in there, just a few more details
+      </h1>
+      <div className="relative bg-white shadow-lg overflow-hidden">
+        <Formik
+          initialValues={{
+            traditionalDiningTime: '5:30',
+            tipTipHooray: false,
+            vacationProtection: 0,
+          }}
+          onSubmit={handleSubmit}
+          validate={() => {}}
+        >
+          {({ values }) => (
+            <Form>
+              <section className="p-8">
+                <div className="text-lg text-blue-950 font-semibold">
+                  Dining & Options
                 </div>
-              </Form>
-            )}
-          </Formik>
-        </div>
+                <hr className="border-t border-gray-300 w-full my-5" />
+                <DiningOptions values={values} />
+                <hr className="border-t border-gray-300 w-full my-5" />
+                <TipTipHooray />
+                <hr className="border-t border-gray-300 w-full my-5" />
+                <VacationProtection
+                  values={values}
+                  setVacationProtection={setVacationProtection}
+                  vacationProtection={vacationProtection}
+                />
+              </section>
+
+              <div className="max-w-[932px] bg-gray-100 h-20 flex justify-end items-center pr-7">
+                <button
+                  type="submit"
+                  className="bg-blue-600 rounded-sm w-fit text-white flex items-center justify-center px-8 py-3"
+                >
+                  Continue
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
       </div>
     </motion.div>
   );

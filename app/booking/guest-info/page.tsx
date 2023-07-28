@@ -23,24 +23,23 @@ const GuestInfoPage = () => {
       initial={{ opacity: 0, translateY: 150 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.75 }}
+      className="mb-10"
     >
-      <div className="mx-16 pt-5 mb-10">
-        <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-2">
-          Who’s traveling?
-        </h1>
-        <div className="text-gray-800 mb-9">
-          Time to get personal — tell us a bit more about who is traveling.
-          Please make sure the details you provide for all guests match their
-          government-issued photo IDs.
+      <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-2">
+        Who’s traveling?
+      </h1>
+      <div className="text-gray-800 mb-9">
+        Time to get personal — tell us a bit more about who is traveling. Please
+        make sure the details you provide for all guests match their
+        government-issued photo IDs.
+      </div>
+      <div className="bg-white shadow-lg">
+        <div className="text-blue-950 text-2xl px-10 pt-10">
+          Guest Information
         </div>
-        <div className="bg-white shadow-lg">
-          <div className="text-blue-950 text-2xl px-10 pt-10">
-            Guest Information
-          </div>
-          <hr className="border-t border-gray-300 w-full my-5 mx-10" />
-          <GuestIdentifiers cruise={cruise} currentGuest={currentGuest} />
-          <GuestInfoForm setCurrentGuest={setCurrentGuest} />
-        </div>
+        <hr className="border-t border-gray-300 w-full my-5" />
+        <GuestIdentifiers cruise={cruise} currentGuest={currentGuest} />
+        <GuestInfoForm setCurrentGuest={setCurrentGuest} />
       </div>
     </motion.div>
   );

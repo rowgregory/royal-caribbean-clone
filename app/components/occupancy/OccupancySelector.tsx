@@ -32,41 +32,40 @@ const OccupancySelector = () => {
   };
 
   return (
-
-      <div className="bg-white shadow-lg">
-        <div className="flex gap-8 p-7 flex-col">
-          <div className="flex">
-            <AdultSelector
-              handleQuantityChange={handleQuantityChange}
-              quantity={quantity}
-            />
-            <ChildrenSelector
-              handleQuantityChange={handleQuantityChange}
-              quantity={quantity}
-            />
-          </div>
-          <hr className="border-t border-gray-300 w-full my-5" />
-          <div className="flex justify-end items-center w-full text-gray-500 text-sm">
-            I need an accessible room <FaWheelchair className="mx-2" />
-            <input type="checkbox" onChange={handleHandicapChange} />
-          </div>
-        </div>
-        <div className="max-w-[932px] bg-gray-100 h-20 flex justify-end items-center pr-7">
-          <ContinueButton
-            payload={{
-              guests: {
-                adults: quantity.adults,
-                children: quantity.children,
-              },
-              handicapAccessibleRoom: handicap,
-              subtotal,
-              taxes,
-            }}
-            step={2.2}
-            href="/booking/superCategory"
+    <div className="bg-white shadow-lg">
+      <div className="flex gap-8 p-7 flex-col">
+        <div className="flex flex-col xl:flex-row">
+          <AdultSelector
+            handleQuantityChange={handleQuantityChange}
+            quantity={quantity}
+          />
+          <ChildrenSelector
+            handleQuantityChange={handleQuantityChange}
+            quantity={quantity}
           />
         </div>
+        <hr className="border-t border-gray-300 w-full my-5" />
+        <div className="flex justify-end items-center w-full text-gray-500 text-sm">
+          I need an accessible room <FaWheelchair className="mx-2" />
+          <input type="checkbox" onChange={handleHandicapChange} />
+        </div>
       </div>
+      <div className="bg-gray-100 h-20 flex justify-end items-center px-7">
+        <ContinueButton
+          payload={{
+            guests: {
+              adults: quantity.adults,
+              children: quantity.children,
+            },
+            handicapAccessibleRoom: handicap,
+            subtotal,
+            taxes,
+          }}
+          step={2.2}
+          href="/booking/superCategory"
+        />
+      </div>
+    </div>
   );
 };
 

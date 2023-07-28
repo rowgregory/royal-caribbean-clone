@@ -3,7 +3,7 @@ import { ErrorMessage, Field } from 'formik';
 
 const GuestStateSelect = () => {
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2">
       <label htmlFor="state" className="text-sm font-light text-gray-800">
         State/province of residency
       </label>
@@ -21,7 +21,7 @@ const GuestStateSelect = () => {
         ))}
       </Field>
       <ErrorMessage
-        name="citizenship"
+        name="state"
         component="div"
         className="text-red-500 text-sm mt-1"
       />

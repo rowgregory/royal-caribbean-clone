@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { useCruiseContext } from '@/app/context/cruiseContext';
-import cruises from '../../data/cruises.json'
+import cruises from '../../data/cruises.json';
 import RoomCategory from './RoomCategory';
 
 const CategorySelector = () => {

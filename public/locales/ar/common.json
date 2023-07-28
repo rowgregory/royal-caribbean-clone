@@ -1,4 +1,12 @@
 {
+  "header": {
+    "findACruise": "Buscar un Crucero",
+    "deals": "Ofertas",
+    "ships": "Barcos",
+    "destinations": "Destinos",
+    "manageMyCruise": "Gestionar mi Crucero",
+    "signIn": "Iniciar Sesión"
+  },
   "resources": {
     "select-location": {
       "selectYourLocation": "SELECCIONA TU UBICACIÓN",

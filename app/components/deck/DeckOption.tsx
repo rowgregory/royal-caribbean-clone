@@ -16,12 +16,14 @@ const DeckOption = ({ deckNumber, obj, setDeckNumber }: any) => {
     >
       <div>{obj.deck}</div>
       {deckNumber === obj.deck ? (
-        <ContinueButton
-          payload={{ shipDeck: obj.deck }}
-          step={2.6}
-          href="/booking/cabin"
-          btnText="Select"
-        />
+        <div className="w-[100px]">
+          <ContinueButton
+            payload={{ shipDeck: obj.deck }}
+            step={2.6}
+            href="/booking/cabin"
+            btnText="Select"
+          />
+        </div>
       ) : (
         <div
           onClick={() => setDeckNumber(obj.deck)}

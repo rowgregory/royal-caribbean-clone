@@ -7,11 +7,11 @@ const Header = ({ user }: any) => {
   const [dropDown, setDropDown] = useState(false);
   return (
     <header className="h-20 bg-blue-600 w-full flex items-center justify-center">
-      <div className="w-full max-w-7xl flex justify-between items-center">
+      <div className="w-full max-w-7xl flex justify-between items-center mr-5">
         <Image
           src="/logo-white.png"
           alt="Royal Caribbean"
-          className="w-12"
+          className="mx-auto object-cover h-auto"
           width="0"
           height="0"
           sizes="100vw"
@@ -23,18 +23,21 @@ const Header = ({ user }: any) => {
         >
           {user?.email?.slice(0, 2)}
         </div>
-        {dropDown && (
-          <div className="absolute px-6 py-3 right-20 top-16 z-10 bg-white rounded-md">
-            <Link
-              href="/signin"
-              onClick={() => {
-                signOut({ callbackUrl: '/signin' });
-              }}
-            >
-              Sign out
-            </Link>
-          </div>
-        )}
+        <div className="relative">
+          {dropDown && (
+            <div className="absolute right-0 top-8 w-28 py-2 z-10 bg-white rounded-md flex items-center justify-center">
+              <Link
+                className="hover:text-blue-500 duration-300"
+                href="/signin"
+                onClick={() => {
+                  signOut({ callbackUrl: '/signin' });
+                }}
+              >
+                Sign out
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

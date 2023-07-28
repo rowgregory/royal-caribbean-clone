@@ -1,4 +1,12 @@
 {
+  "header": {
+    "findACruise": "Find a Cruise",
+    "deals": "Deals",
+    "ships": "Ships",
+    "destinations": "Destinations",
+    "manageMyCruise": "Manage My Cruise",
+    "signIn": "Sign In"
+  },
   "resources": {
     "select-location": {
       "selectYourLocation": "SELECT YOUR LOCATION",

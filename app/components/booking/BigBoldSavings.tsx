@@ -1,10 +1,8 @@
-'use client';
-
 import ContinueButton from '../ContinueBtn';
 import DealSection from './DealSection';
 import PriceInfo from './PriceInfo';
 
-const BigBoldSavings = () => {
+const BigBoldSavings = ({ cruise }: any) => {
   return (
     <>
       <div className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-8">
@@ -13,10 +11,10 @@ const BigBoldSavings = () => {
       <div className="bg-white shadow-lg flex flex-col w-full">
         <div className="flex justify-between p-7">
           <DealSection />
-          <PriceInfo />
+          <PriceInfo cruise={cruise} />
         </div>
-        <div className="bg-gray-100 h-20 flex justify-end items-center pr-7">
-          <ContinueButton  step={2} href="/booking/stateroom" />
+        <div className="bg-gray-100 h-20 flex justify-end items-center px-7">
+          <ContinueButton step={2} href="/booking/stateroom" />
         </div>
       </div>
     </>

@@ -16,12 +16,14 @@ const CabinOption = ({ roomNumber, obj, setRoomNumber }: any) => {
     >
       <div>{obj.roomNumber}</div>
       {roomNumber === obj.roomNumber ? (
-        <ContinueButton
-          payload={{ shipRoomNumber: obj.roomNumber }}
-          step={3}
-          href="/booking/guest-info"
-          btnText="Select"
-        />
+        <div className="w-[100px]">
+          <ContinueButton
+            payload={{ shipRoomNumber: obj.roomNumber }}
+            step={3}
+            href="/booking/guest-info"
+            btnText="Select"
+          />
+        </div>
       ) : (
         <div
           onClick={() => setRoomNumber(obj.roomNumber)}

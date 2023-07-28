@@ -62,7 +62,7 @@
         ]
       },
       {
-        "id": "RCQNFUNGQXLLC3M1AK7J9C",
+        "id": "RCQNFUNGQXLLC3M1AK7J9A",
         "date": "Sat, Oct 28, 2023",
         "departDate": "Oct 28, 2024",
         "arrivalDate": "Nov 3, 2024",
@@ -70,6 +70,7 @@
           {
             "id": "RCFRHK2KSO0YETA52AMWB2",
             "type": "Interior",
+            "originalPrice": 647,
             "price": 453,
             "description": "Our interior staterooms include a wide array of amenities for your whole family to enjoy.",
             "image": "/interior.jpeg"
@@ -77,6 +78,7 @@
           {
             "id": "RC9PM67U8BHAW2215LPUFO",
             "type": "Outside View",
+            "originalPrice": 739,
             "price": 653,
             "description": "Spectacular sights and amazing views from the comfort of your stateroom.",
             "image": "/ocean_view.jpeg"
@@ -84,6 +86,7 @@
           {
             "id": "RCOZ24YFQK9XZDW097V4MM",
             "type": "Balcony",
+            "originalPrice": 870,
             "price": 781,
             "description": "Breathtaking views to take in all the wonder and excitement of your destination.",
             "image": "/balcony.jpeg"
@@ -91,6 +94,7 @@
           {
             "id": "RC5BJ3G2JVDV3ZC0G4CGDL",
             "type": "Suite",
+            "originalPrice": 1741,
             "price": 1211,
             "description": "Priority boarding and departure, dedicated entertainment seating, and more.",
             "image": "/suites.jpeg"
@@ -100,28 +104,108 @@
     ]
   },
   {
-    "id": "RCRIHCPN3IZ308BL017EAV",
-    "image": "/cruise_2.webp",
+    "id": "ABCDE12345FGHIJK6789",
+    "image": "/cruise_3.webp",
     "like": "",
     "share": "",
-    "pill": "",
-    "amountOfNights": 14,
-    "packageTitle": "Transatlantic Cruise",
-    "shipName": "Oasis of the Seas",
-    "direction": "ONEWAY FROM",
-    "directionCities": "Miami, Florida to Barcelona, Spain",
+    "pill": "Luxury Cruises",
+    "amountOfNights": 7,
+    "packageTitle": "Mediterranean Adventure",
+    "shipName": "Elegance of the Seas",
+    "direction": "ROUNDTRIP FROM",
+    "directionCities": "Barcelona, Spain",
     "countriesVisiting": [
-      " Miami",
-      "FloridaMálaga",
-      "SpainAlicante",
-      "SpainValencia",
-      "SpainPalma De Mallorca",
-      "SpainBarcelona",
-      "Spain"
+      "Barcelona, Spain",
+      "Naples, Italy",
+      "Athens, Greece",
+      "Valletta, Malta",
+      "Barcelona, Spain"
     ],
-    "price": 696,
+    "price": 1200,
     "perPerson": "AVG PER PESON",
-    "cruiseOptions": 1,
-    "terms": "Limited availability"
+    "cruiseOptions": 2,
+    "terms": "Terms and conditions apply",
+    "availableDates": [
+      {
+        "id": "ABCD12345EFG67890HIJ1K",
+        "date": "Sat, Mar 12, 2024",
+        "departDate": "Mar 12, 2024",
+        "arrivalDate": "Mar 19, 2024",
+        "rooms": [
+          {
+            "id": "ABC12345DE678FGH90IJ1K",
+            "type": "Interior",
+            "originalPrice": 1500,
+            "price": 1200,
+            "description": "Our interior staterooms include a wide array of amenities for your whole family to enjoy.",
+            "image": "/interior.jpeg"
+          },
+          {
+            "id": "ABC67890DE123FGH45IJ1K",
+            "type": "Ocean View",
+            "originalPrice": 1800,
+            "price": 1500,
+            "description": "Spectacular sights and amazing views from the comfort of your stateroom.",
+            "image": "/ocean_view.jpeg"
+          },
+          {
+            "id": "ABCGHIJK67890DEF12345",
+            "type": "Balcony",
+            "originalPrice": 2100,
+            "price": 1800,
+            "description": "Breathtaking views to take in all the wonder and excitement of your destination.",
+            "image": "/balcony.jpeg"
+          },
+          {
+            "id": "ABCGH45IJ1K67890DEF12",
+            "type": "Suite",
+            "originalPrice": 3000,
+            "price": 2500,
+            "description": "Priority boarding and departure, dedicated entertainment seating, and more.",
+            "image": "/suites.jpeg"
+          }
+        ]
+      },
+      {
+        "id": "ABCDEF12GH45678IJ90K",
+        "date": "Tue, Aug 20, 2024",
+        "departDate": "Aug 20, 2024",
+        "arrivalDate": "Aug 27, 2024",
+        "rooms": [
+          {
+            "id": "ABC45678DEF90GH12IJK",
+            "type": "Interior",
+            "originalPrice": 1800,
+            "price": 1500,
+            "description": "Our interior staterooms include a wide array of amenities for your whole family to enjoy.",
+            "image": "/interior.jpeg"
+          },
+          {
+            "id": "ABC12IJK45678DEF90GH",
+            "type": "Ocean View",
+            "originalPrice": 2100,
+            "price": 1800,
+            "description": "Spectacular sights and amazing views from the comfort of your stateroom.",
+            "image": "/ocean_view.jpeg"
+          },
+          {
+            "id": "ABC90GHIJ45678DEF12K",
+            "type": "Balcony",
+            "originalPrice": 2400,
+            "price": 2100,
+            "description": "Breathtaking views to take in all the wonder and excitement of your destination.",
+            "image": "/balcony.jpeg"
+          },
+          {
+            "id": "ABCD45678EFGH90IJ1K",
+            "type": "Suite",
+            "originalPrice": 3500,
+            "price": 3000,
+            "description": "Priority boarding and departure, dedicated entertainment seating, and more.",
+            "image": "/suites.jpeg"
+          }
+        ]
+      }
+    ]
   }
 ]

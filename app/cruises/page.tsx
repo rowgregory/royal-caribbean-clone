@@ -6,11 +6,13 @@ import Header from '../components/Header';
 import ItineraryPanel from '../components/ItineraryPanel';
 import PromotionBanner from '../components/cruises/PromotionBanner';
 import CruiseList from '../components/cruises/CruiseList';
-
+import { usePathname } from 'next/navigation';
 
 const CruisesPage = () => {
   const [openItineraryPanel, setOpenItineraryPanel] = useState(false);
   const [selectedCruise, setSelectedCruise] = useState({}) as any;
+  const path = usePathname();
+  const isCruisePage = path === '/cruises';
 
   const handleOpenItineraryPanel = (cruise: any) => {
     setSelectedCruise(cruise);
@@ -23,12 +25,12 @@ const CruisesPage = () => {
 
   return (
     <>
-      {openItineraryPanel && (
-        <ItineraryPanel
-          openItineraryPanel={openItineraryPanel}
-          cruise={selectedCruise}
-        />
-      )}
+      <ItineraryPanel
+        openItineraryPanel={openItineraryPanel}
+        cruise={selectedCruise}
+        setOpenItineraryPanel={setOpenItineraryPanel}
+      />
+
       <div
         onClick={handleCloseItineraryPanel}
         className={`${
@@ -43,8 +45,10 @@ const CruisesPage = () => {
         }`}
       >
         <SecondaryHeader />
-        <Header />
-        <div className={`min-h-[calc(100vh-104px)] bg-[#f2f2f2] w-full mx-auto`}>
+        <Header isCruisePage={isCruisePage} />
+        <div
+          className={`min-h-[calc(100vh-104px)] bg-[#f2f2f2] w-full mx-auto`}
+        >
           <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center pt-6">
             <PromotionBanner />
             <CruiseList onCruiseCardClick={handleOpenItineraryPanel} />

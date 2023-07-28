@@ -3,12 +3,17 @@
 import { createContext, useReducer, useContext, useEffect } from 'react';
 
 export interface CruiseContextProps {
+  loading: boolean;
   cruise: any;
   step: number;
+  openMobileItinerary: boolean;
+  openBurgerMenu: boolean;
   addCruise: (cruise: any) => void;
   setBookingStep: (step: number) => void;
   updateCruise: (fields: any) => void;
   removeFieldsFromCruise: (fields: any) => void;
+  setOpenMobileItinerary: (openMobileItinerary: any) => void;
+  setOpenBurgerMenu: (openBurgerMenu: any) => void;
 }
 
 const initialState = {};
@@ -17,12 +22,14 @@ export const CruiseContext = createContext({
   loading: true,
   cruise: {},
   step: 0,
-  successPay: false,
+  openMobileItinerary: false,
+  openBurgerMenu: false,
   addCruise: (cruise: any) => cruise,
   setBookingStep: (step: any) => step,
   updateCruise: (fields: any) => fields,
   removeFieldsFromCruise: (fields: any) => fields,
-  payCruise: (cruise: any) => cruise,
+  setOpenMobileItinerary: (openMobileItinerary: any) => openMobileItinerary,
+  setOpenBurgerMenu: (openBurgerMenu: any) => openBurgerMenu,
 });
 
 const cruiseReducer = (state: any, action: any) => {
@@ -65,15 +72,17 @@ const cruiseReducer = (state: any, action: any) => {
           ...action.payload,
         },
       };
-    case 'PAY_CRUISE':
-      localStorage.setItem('cruise', JSON.stringify({ ...action.payload }));
+    case 'SET_OPEN_MOBILE_ITINERARY':
       return {
         ...state,
-        loading: false,
-        cruise: {
-          ...action.payload,
-        },
-        successPay: true,
+        ...state.cruise,
+        openMobileItinerary: action.payload,
+      };
+    case 'SET_OPEN_BURGER_MENU':
+      return {
+        ...state,
+        ...state.cruise,
+        openBurgerMenu: action.payload,
       };
     default:
       return { ...state };
@@ -99,7 +108,6 @@ export const CruiseProvider = (props: any) => {
     }
   }, []);
 
-
   const addCruise = (cruise: any) => {
     dispatch({ type: 'ADD_CRUISE', payload: cruise });
   };
@@ -116,8 +124,18 @@ export const CruiseProvider = (props: any) => {
     dispatch({ type: 'REMOVE_FIELDS_FROM_CRUISE', payload: fields });
   };
 
-  const payCruise = (fields: any) => {
-    dispatch({ type: 'PAY_CRUISE', payload: fields });
+  const setOpenMobileItinerary = (openMobileItinerary: any) => {
+    dispatch({
+      type: 'SET_OPEN_MOBILE_ITINERARY',
+      payload: openMobileItinerary,
+    });
+  };
+
+  const setOpenBurgerMenu = (openBurgerMenu: any) => {
+    dispatch({
+      type: 'SET_OPEN_BURGER_MENU',
+      payload: openBurgerMenu,
+    });
   };
 
   return (
@@ -126,12 +144,14 @@ export const CruiseProvider = (props: any) => {
         loading: state.loading,
         cruise: state.cruise,
         step: state.step,
-        successPay: state.successPay,
+        openMobileItinerary: state.openMobileItinerary,
+        openBurgerMenu: state.openBurgerMenu,
         addCruise,
         setBookingStep,
         updateCruise,
         removeFieldsFromCruise,
-        payCruise,
+        setOpenMobileItinerary,
+        setOpenBurgerMenu,
       }}
       {...props}
     />

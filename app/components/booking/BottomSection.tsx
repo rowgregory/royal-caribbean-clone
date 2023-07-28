@@ -1,11 +1,6 @@
-import {
-  CruiseContextProps,
-  useCruiseContext,
-} from '@/app/context/cruiseContext';
 import React from 'react';
 
-const BottomSection = React.memo(() => {
-  const { cruise, step } = useCruiseContext() as CruiseContextProps;
+const BottomSection = React.memo(({ cruise, step }: any) => {
   return (
     step >= 3 && (
       <section className="p-8">

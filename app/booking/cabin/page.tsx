@@ -20,18 +20,14 @@ const CabinPage = () => {
       initial={{ opacity: 0, translateY: 150 }}
       animate={{ opacity: 1, translateY: 0 }}
       transition={{ duration: 0.75 }}
+      className="mb-10"
     >
-      <div className="mx-16 pt-5 mb-10">
-        <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-9">
-          Good choice, now where do you want your room?
-        </h1>
-        <div className="w-full mx-auto relative bg-white shadow-lg pt-10 overflow-hidden">
-          <CabinSelector
-            roomNumber={roomNumber}
-            setRoomNumber={setRoomNumber}
-          />
-          <CabinSection roomNumber={roomNumber} setRoomNumber={setRoomNumber} />
-        </div>
+      <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-9">
+        Good choice, now where do you want your room?
+      </h1>
+      <div className="w-full mx-auto relative bg-white shadow-lg pt-10 overflow-hidden">
+        <CabinSelector roomNumber={roomNumber} setRoomNumber={setRoomNumber} />
+        <CabinSection roomNumber={roomNumber} setRoomNumber={setRoomNumber} />
       </div>
     </motion.div>
   );

@@ -36,7 +36,7 @@ const GuestInfoForm = ({ setCurrentGuest }: any) => {
         router.push('/booking/summary');
         setBookingStep(4);
       }
-      resetForm()
+      resetForm();
       return updatedGuests;
     });
   };
@@ -60,19 +60,19 @@ const GuestInfoForm = ({ setCurrentGuest }: any) => {
       onSubmit={(values, { resetForm }) => handleSubmit(values, resetForm)}
       validate={validateGuestInfo}
     >
-      <Form>
+      <Form className="grid gap-10 md:gap-2">
         <GuestNameInputs />
-        <div className="flex gap-10 w-full px-10">
+        <div className="flex flex-col md:flex-row gap-10 w-full px-10">
           <GuestGenderSelect />
           <GuestBirthDateSelect />
         </div>
-        <div className="flex gap-10 w-full px-10">
+        <div className="flex flex-col md:flex-row gap-10 w-full px-10">
           <GuestCitizenshipSelect />
           <GuestStateSelect />
         </div>
         <GuestContactInputs />
         <div className="flex gap-10 px-10">
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <label
               htmlFor="crownAndAnchorNumber"
               className="text-sm font-light text-gray-800"
@@ -92,7 +92,7 @@ const GuestInfoForm = ({ setCurrentGuest }: any) => {
               className="text-red-500 text-sm mt-1"
             />
           </div>
-          <div className="w-1/2"></div>
+          <div className="hidden w-0 md:block w-1/2"></div>
         </div>
         <div className="my-8 px-10">
           <label htmlFor="specialOffers" className="flex items-center text-sm">
@@ -121,10 +121,10 @@ const GuestInfoForm = ({ setCurrentGuest }: any) => {
             I have received a Future Cruise Credit (FCC)
           </label>
         </div>
-        <div className="max-w-[932px] bg-gray-100 h-20 flex justify-end items-center pr-7">
+        <div className="bg-gray-100 h-20 flex justify-end items-center px-7">
           <button
             type="submit"
-            className="bg-blue-600 rounded-sm w-fit text-white flex items-center justify-center px-8 py-3"
+            className="bg-blue-600 rounded-sm w-full md:w-fit text-white flex items-center justify-center px-8 py-3"
           >
             Continue
           </button>

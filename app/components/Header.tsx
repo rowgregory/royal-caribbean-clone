@@ -3,60 +3,76 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import dynamic from 'next/dynamic';
 import headerLinksData from '@/public/headerLinksData';
 import Burger from '../components/header/Burger';
+import { FaPhone } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
-const AiOutlineHeart = dynamic(() =>
-  import('react-icons/ai').then((module) => module.AiOutlineHeart)
-);
-const AiOutlineBell = dynamic(() =>
-  import('react-icons/ai').then((module) => module.AiOutlineBell)
-);
-const AiOutlineSearch = dynamic(() =>
-  import('react-icons/ai').then((module) => module.AiOutlineSearch)
-);
-
-const Header = () => {
-  const pathname = usePathname();
-  const isCruisesPage = pathname === '/cruises';
+const Header = ({ isCruisePage }: any) => {
   const session = useSession();
+  const { t } = useTranslation('common');
 
   return (
-    <div className="relative flex flex-col items-center bg-secondary-header w-full">
-      <div
-        className={`${
-          isCruisesPage ? '' : 'absolute'
-        } z-[10] h-[80px] opacity-1 transition-opacity duration-150 linear max-w-[1312px] w-full flex items-center justify-between`}
-      >
-        <Burger />
-        <Link href="/">
-          <Image
-            src="/rc-logo.svg"
-            alt="Logo"
-            className="ml-[36px] w-40 h-auto"
-            priority={true}
-            width="0"
-            height="0"
-            sizes="100vw"
-          />
-        </Link>
-        <div className="flex ml-[32px] items-center">
-          {headerLinksData?.map((link: any, i: number) => (
-            <Link
-              href={link.linkKey}
-              key={i}
-              prefetch
-              className="text-white tracking-[2px] text-[14px] mr-[32px] font-[300]"
-            >
-              {link.textKey}
+    <nav>
+      <div className="bg-secondary-header flex justify-center">
+        <div
+          className={`z-[10] h-[80px] flex items-center px-4 md:px-8 lg:px-20 container mx-auto justify-between max-w-[1440px] ${
+            isCruisePage ? 'relative' : 'absolute'
+          }`}
+        >
+          <section className="flex items-center block">
+            <Burger />
+            {/* Desktop Logo */}
+            <Link href="/" className="hidden sm:hidden md:block">
+              <Image
+                src="/rc-logo.svg"
+                alt="Logo"
+                className="mx-8 w-160 h-43 cursor-pointer max-w-[200px]"
+                priority={true}
+                width={160}
+                height={43}
+              />
             </Link>
-          ))}
-          <div className="flex items-center ml-[100px]">
-            <AiOutlineHeart className="text-white mr-[24px]" />
-            <AiOutlineBell className="text-white mr-[24px]" />
+          </section>
+
+          {/* Mobile Logo */}
+          <Link href="/" className="block md:hidden">
+            <Image
+              src="/logo-white.png"
+              alt="Logo"
+              className="cursor-pointer mx-auto object-cover w-12 h-auto"
+              priority={true}
+              width="0"
+              height="0"
+              sizes="100vw"
+            />
+          </Link>
+
+          {/* Mobile Phone Icon */}
+          <Link href="/" className="block md:hidden">
+            <FaPhone
+              className="text-white"
+              onClick={() => (window.location.href = 'facetime://8665627625')}
+            />
+          </Link>
+
+          {/* Desktop Links */}
+          <div className="hidden md:hidden lg:flex items-center w-full">
+            {headerLinksData(t)?.map((link: any, i: number) => (
+              <Link
+                href={link.linkKey}
+                key={i}
+                prefetch
+                className="text-white tracking-[2px] text-[14px] font-[300] text-center pr-12"
+              >
+                {link.textKey}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Signin */}
+          <div className="hidden md:hidden lg:flex items-center justify-end w-2/12">
             {session.data?.user ? (
               <div className="text-white text-xs uppercase tracking-[1px] flex items-center">
                 <Image
@@ -72,17 +88,16 @@ const Header = () => {
             ) : (
               <Link
                 href="/signin"
-                className="text-white tracking-[2px] text-[14px] mr-[32px] font-[300]"
+                className="text-white tracking-[2px] text-[14px] font-[300]"
                 prefetch
               >
-                SIGN IN
+                {t('header.signIn')}
               </Link>
             )}
           </div>
         </div>
-        {!session.data?.user && <AiOutlineSearch className="text-white" />}
       </div>
-    </div>
+    </nav>
   );
 };
 

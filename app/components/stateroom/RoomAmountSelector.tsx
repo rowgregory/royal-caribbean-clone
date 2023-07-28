@@ -18,7 +18,7 @@ const RoomAmountSelector = () => {
           handleQuantityChange={handleQuantityChange}
         />
       </div>
-      <div className="max-w-[932px] bg-gray-100 h-20 flex justify-end items-center pr-7">
+      <div className="bg-gray-100 h-20 flex justify-end items-center px-7">
         <ContinueButton
           payload={{ roomAmount: quantity }}
           step={2.1}

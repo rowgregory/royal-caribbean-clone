@@ -17,12 +17,12 @@
 }
 
 @font-face {
-  font-family: 'kapra-condensed';
-  src: url('../public/fonts/Kapra-Condensed.otf');
+  font-family: "kapra-condensed";
+  src: url("/fonts/Kapra-Condensed.otf");
 }
 @font-face {
-  font-family: 'kapra';
-  src: url('../public/fonts/Kapra-Regular.otf');
+  font-family: "kapra";
+  src: url("/fonts/Kapra-Regular.otf");
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -37,3 +37,21 @@
   background-color: transparent;
 }
 
+::-webkit-scrollbar {
+  background-color: #0c214d;
+  width: 6px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dark-blue) transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #b8b8c3;
+}
+*::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+}

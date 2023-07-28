@@ -16,7 +16,7 @@ const RoomPreferenceSelector = () => {
   }, [cruise?.roomPrice]);
 
   return (
-    <div className="w-full flex gap-5">
+    <div className="w-full flex flex-col gap-10 xl:flex-row xl:gap-5">
       {roomPreferences.map((pref: any, i: number) => (
         <RoomPreferenceCard key={i} pref={pref} cruise={cruise} />
       ))}

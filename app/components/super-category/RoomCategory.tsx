@@ -3,9 +3,9 @@ import ContinueButton from '../ContinueBtn';
 
 const RoomCategory = ({ room }: any) => {
   return (
-    <div className="flex w-full h-[365px] mb-8 rounded-md shadow-lg relative">
+    <div className="flex flex-col md:flex-row w-full h-auto md:h-[365px] mb-16 rounded-md shadow-lg relative">
       <Image
-        className="w-1/2 object-cover"
+        className="w-full h-[200px] md:w-1/2 md:h-auto object-cover"
         src={room.image}
         alt="Room Type"
         width={350}

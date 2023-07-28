@@ -5,7 +5,7 @@ import { ErrorMessage, Field } from 'formik';
 
 const GuestBirthDateSelect = () => {
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2">
       <label htmlFor="birthMonth" className="text-sm font-light text-gray-800">
         Date of Birth
       </label>
