@@ -16,7 +16,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const response = await fetch(
-          `https://royal-caribbean-clone-r26xosxca-rowgregory.vercel.app/api/user?endpoint=login`,
+          `https://royal-caribbean-clone.vercel.app/api/user?endpoint=login`,
           {
             method: "POST",
             headers: {

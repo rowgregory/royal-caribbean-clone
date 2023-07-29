@@ -1,6 +1,6 @@
 async function getCruiseById(id: any) {
   const response = await fetch(
-    `https://royal-caribbean-clone-r26xosxca-rowgregory.vercel.app/api/cruise?endpoint=GET_CRUISE_BY_ID&cruiseId=${id}`,
+    `https://royal-caribbean-clone.vercel.app/api/cruise?endpoint=GET_CRUISE_BY_ID&cruiseId=${id}`,
     {
       method: 'GET',
       headers: {

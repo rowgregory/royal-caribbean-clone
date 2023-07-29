@@ -9,8 +9,7 @@ const nextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           {
             key: "Access-Control-Allow-Origin",
-            value:
-              "https://royal-caribbean-clone-9twfkz1mi-rowgregory.vercel.app/",
+            value: "https://royal-caribbean-clone.vercel.app/",
           },
           {
             key: "Access-Control-Allow-Methods",
