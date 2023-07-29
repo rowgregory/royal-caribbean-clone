@@ -20,9 +20,9 @@ const ShipImage = ({
   if (section !== undefined) {
     localStorage.setItem('section', JSON.stringify(section));
   }
-  const shipSectionFromLocalStorage = JSON.parse(
-    localStorage.getItem('section') || ''
-  );
+  const shipSectionFromLocalStorage = localStorage.getItem('section')
+    ? JSON.parse(localStorage.getItem('section') || '')
+    : '';
 
   const sectionTranslate: SectionTranslate = {
     Aft: '389px',
