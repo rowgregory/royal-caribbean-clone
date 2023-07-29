@@ -11,8 +11,7 @@ const DeckPage = () => {
   const { cruise } = useCruiseContext() as any;
   const [deckNumber, setDeckNumber] = useState(9);
 
-  const { shipSection, ...rest } = cruise || {};
-  useBookingStep(2.4, rest);
+  useBookingStep(2.4);
 
   return (
     <motion.div
@@ -25,7 +24,7 @@ const DeckPage = () => {
       <h1 className="text-3xl text-blue-950 tracking-wide font-semibold mt-10 mb-9">
         Good choice, now where do you want your room?
       </h1>
-      <div className="relative bg-white shadow-lg pt-10 overflow-hidden">
+      <div className="bg-white shadow-lg pt-10 overflow-hidden">
         <ShipImage deckNumber={deckNumber} section={cruise?.shipSection} />
         <DeckSelector deckNumber={deckNumber} setDeckNumber={setDeckNumber} />
       </div>

@@ -2,7 +2,12 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronLeft, FaChevronUp } from 'react-icons/fa';
+import {
+  FaCalendarAlt,
+  FaChevronDown,
+  FaChevronLeft,
+  FaChevronUp,
+} from 'react-icons/fa';
 
 const cruisingToData = [
   'Mexico',
@@ -206,6 +211,7 @@ const CruiseSeachWidget = () => {
                 )}`}
             </div>
           </div>
+          <FaCalendarAlt className="text-[#025ddc]" />
         </div>
         <Link
           href="/cruises"

@@ -6,11 +6,13 @@ import { FaChevronRight, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import { useLanguageContext } from '../context/LanguageProvider';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 
 const BurgerMenuWrapper = ({ children }: any) => {
   const { openBurgerMenu, setOpenBurgerMenu } =
     useCruiseContext() as CruiseContextProps;
   const { country } = useLanguageContext();
+  const session = useSession();
 
   return (
     <div>
@@ -26,19 +28,21 @@ const BurgerMenuWrapper = ({ children }: any) => {
             onClick={() => setOpenBurgerMenu(false)}
             className="self-end m-4 text-[#005edc] text-3xl justify-end"
           />
-          <Link
-            onClick={() => setOpenBurgerMenu(false)}
-            className="text-[#005edc] text-sm mb-16 mt-12 tracking-widest"
-            href="/signin"
-          >
-            SIGN IN
-          </Link>
+          {!session && (
+            <Link
+              onClick={() => setOpenBurgerMenu(false)}
+              className="text-[#005edc] text-sm mb-16 mt-12 tracking-widest"
+              href="/signin"
+            >
+              SIGN IN
+            </Link>
+          )}
           <Link
             onClick={() => setOpenBurgerMenu(false)}
             href="/cruises"
-            className="flex items-center text-2xl text-[#005edc]"
+            className="flex items-center font-light text-2xl text-[#005edc] mt-8"
           >
-            Find A Cruise <FaChevronRight className="ml-6 text-[#005edc]" />
+            Find a Cruise <FaChevronRight className="ml-6 text-[#005edc]" />
           </Link>
         </div>
         <Link

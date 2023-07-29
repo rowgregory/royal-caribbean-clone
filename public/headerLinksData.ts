@@ -2,6 +2,7 @@ const headerLinksData = (t: any) => [
   {
     linkKey: '/cruises',
     textKey: t('header.findACruise'),
+    isLink: true,
   },
   {
     linkKey: '',

@@ -59,22 +59,34 @@ const Header = ({ isCruisePage }: any) => {
 
           {/* Desktop Links */}
           <div className="hidden md:hidden lg:flex items-center w-full">
-            {headerLinksData(t)?.map((link: any, i: number) => (
-              <Link
-                href={link.linkKey}
-                key={i}
-                prefetch
-                className="text-white tracking-[2px] text-[14px] font-[300] text-center pr-12"
-              >
-                {link.textKey}
-              </Link>
-            ))}
+            {headerLinksData(t)?.map((link: any, i: number) =>
+              link.isLink ? (
+                <Link
+                  href={link.linkKey}
+                  key={i}
+                  prefetch
+                  className="text-white tracking-[2px] text-[14px] font-[300] text-center pr-12"
+                >
+                  {link.textKey}
+                </Link>
+              ) : (
+                <div
+                  key={i}
+                  className="text-white tracking-[2px] text-[14px] font-[300] text-center pr-12"
+                >
+                  {link.textKey}
+                </div>
+              )
+            )}
           </div>
 
           {/* Desktop Signin */}
           <div className="hidden md:hidden lg:flex items-center justify-end w-2/12">
             {session.data?.user ? (
-              <div className="text-white text-xs uppercase tracking-[1px] flex items-center">
+              <Link
+                href="/account"
+                className="text-white text-xs uppercase tracking-[1px] flex items-center"
+              >
                 <Image
                   src="/pre-gold.svg"
                   alt="Pre Gold Status"
@@ -84,7 +96,7 @@ const Header = ({ isCruisePage }: any) => {
                   height={31}
                 />{' '}
                 Hi, {session?.data?.user?.name?.split(' ')[0]}
-              </div>
+              </Link>
             ) : (
               <Link
                 href="/signin"

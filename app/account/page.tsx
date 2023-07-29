@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import getCruisesByEmail from '../actions/getCruisesByEmail';
+import SkeletonLoader from '../components/SkeletonLoader';
 
 const AccountPage = () => {
   const [data, setData] = useState(null) as any;
@@ -24,7 +25,7 @@ const AccountPage = () => {
     <>
       <div className="max-w-[1024px] w-full mx-auto mt-10 px-5">
         {loading ? (
-          <>SKELETON LOADER</>
+          <SkeletonLoader />
         ) : ifACruiseHasBeenPurchased ? (
           <>
             {data?.map((obj: any, i: number) => (
