@@ -1,6 +1,6 @@
 async function createCruise(cruise: any) {
   const response = await fetch(
-    'http://localhost:3000/api/cruise?endpoint=CREATE_CRUISE',
+    'https://royal-caribbean-clone-r26xosxca-rowgregory.vercel.app/api/cruise?endpoint=CREATE_CRUISE',
     {
       method: 'POST',
       headers: {

@@ -1,6 +1,6 @@
 export async function registerUser(values: any) {
   const response = await fetch(
-    'http://localhost:3000/api/user?endpoint=register',
+    'https://royal-caribbean-clone-r26xosxca-rowgregory.vercel.app/api/user?endpoint=register',
     {
       method: 'POST',
       headers: {

@@ -1,6 +1,6 @@
 async function getCruisesByEmail(email: any) {
   const response = await fetch(
-    `http://localhost:3000/api/cruise?endpoint=GET_CRUISES_BY_EMAIL&email=${email}`,
+    `https://royal-caribbean-clone-r26xosxca-rowgregory.vercel.app/api/cruise?endpoint=GET_CRUISES_BY_EMAIL&email=${email}`,
     {
       method: 'GET',
       headers: {
