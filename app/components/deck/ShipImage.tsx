@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type SectionTranslate = {
   Aft: string;
@@ -17,26 +18,28 @@ const ShipImage = ({
   deckNumber: number;
   section: SectionType;
 }) => {
-  if (section !== undefined) {
-    localStorage.setItem('section', JSON.stringify(section));
-  }
-  const shipSectionFromLocalStorage = localStorage.getItem('section')
-    ? JSON.parse(localStorage.getItem('section') || '')
-    : '';
+  const [translateX, setTranslateX] = useState('');
 
-  const sectionTranslate: SectionTranslate = {
-    Aft: '389px',
-    'Mid-Ship': '-760px',
-    Forward: '-400px',
-  };
+  useEffect(() => {
+    const shipSectionFromLocalStorage = localStorage.getItem('section')
+      ? JSON.parse(localStorage.getItem('section') || '')
+      : '';
+    if (section !== undefined) {
+      localStorage.setItem('section', JSON.stringify(section));
+    }
 
-  // Type assertion to ensure section is of the correct type
-  const translatedSection: SectionType =
-    section !== undefined
-      ? (section as SectionType)
-      : shipSectionFromLocalStorage;
+    const sectionTranslate: SectionTranslate = {
+      Aft: '389px',
+      'Mid-Ship': '-760px',
+      Forward: '-400px',
+    };
+    const translatedSection: SectionType =
+      section !== undefined
+        ? (section as SectionType)
+        : shipSectionFromLocalStorage;
 
-  const translateX = sectionTranslate[translatedSection];
+    setTranslateX(sectionTranslate[translatedSection]);
+  }, [section]);
 
   return (
     <figure className="h-[314px] w-[400px] overflow-hidden mx-auto">
